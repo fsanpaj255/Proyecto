@@ -4,22 +4,22 @@ if (isset($_GET['menu'])) {
         require_once 'index.php';
     }
     if ($_GET['menu'] == "login") {
-        require_once './Vistas/Login/autentifica.php';
+        require_once './view/Login/autentifica.php';
     }
     if ($_GET['menu'] == "cerrarsesion") {
-        require_once './Vistas/Login/cerrarsesion.php';
+        require_once './view/Login/cerrarsesion.php';
      
     }
     if ($_GET['menu'] == "mantenimiento") {
-        require_once './Vistas/mantenimiento/mantenimiento.php';
+        require_once './view/mantenimiento/mantenimiento.php';
      
     }
     if ($_GET['menu'] == "listadoanimales") {
-        require_once './Vistas/Mantenimiento/listadoanimales.php';
+        require_once './view/Mantenimiento/listadoanimales.php';
      
     }
     if ($_GET['menu'] == "listadovacunas") {
-        require_once './Vistas/Mantenimiento/listadovacunas.php';
+        require_once './view/Mantenimiento/listadovacunas.php';
      
     }
 
