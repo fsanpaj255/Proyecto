@@ -3,7 +3,7 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == "inicio") {
         require_once 'index.php';
     }
-    if ($_GET['menu'] == "login") {
+    if ($_GET['menu'] == "autentifica") {
         require_once './view/Login/autentifica.php';
     }
     if ($_GET['menu'] == "cerrarsesion") {
@@ -14,8 +14,8 @@ if (isset($_GET['menu'])) {
         require_once './view/mantenimiento/mantenimiento.php';
      
     }
-    if ($_GET['menu'] == "listadoanimales") {
-        require_once './view/Mantenimiento/listadoanimales.php';
+    if ($_GET['menu'] == "listadoparticipantes") {
+        require_once './view/Mantenimiento/listadoparticipantes.php';
      
     }
     if ($_GET['menu'] == "listadovacunas") {

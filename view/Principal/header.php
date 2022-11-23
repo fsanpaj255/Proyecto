@@ -1,11 +1,8 @@
 <header>
-<nav>
-<div class="logo"><img src="source/radio.png"></div>
-<div class="barnav">
-<div>Mantenimiento</div>
-<div>Listados</div>
-<div>item3</div>
-<div>item4</div>
+<div class="topnav">
+  <a class="active" href="?menu=default"><img src="source/ondas2.png"></a>
+  <a href="?menu=listadoparticipantes">Listado participantes</a>
+  <a href="?menu=listadovacunas">Listado vacunas</a>
+  <a href="?menu=autentifica"><button type="submit" href="?menu=autentifica">Iniciar sesión</button></a>
 </div>
-</nav>
-</header>
+</header>  

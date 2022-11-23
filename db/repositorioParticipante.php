@@ -49,17 +49,19 @@ class repositorioParticipante
 }
 
 //Insertar nuevo participante //ver como se mete el imagen y el localizacion
-function insert(Participante $participante)
+function insert($participante, $x , $y , $z)
 {
+$point = new Point($x,$y,$z);
 $identificador = $participante->getIdentificador();
 $admin = $participante->getAdmin();
 $correo = $participante->getCorreo();
 $contrasena = $participante->getContrasena();
-$localizacion = $participante->getLocalizacion();
+$localizacion = $point;
 $imagen = $participante->getImagen();
 $nombre = $participante->getNombre();
 
-   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', GeomFromText('$localizacion'), '$imagen', '$nombre')");
+   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', '$localizacion' , '$imagen', '$nombre')");
+   return "insertado";
 }
 
  //Actualizar un  participante por su id

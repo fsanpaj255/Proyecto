@@ -1,5 +1,5 @@
 <?php
-class Bandas {
+class Banda {
     private $id;
     private $distancia;
     private $rangoMin;

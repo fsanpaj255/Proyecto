@@ -1,6 +1,6 @@
 <?php
 //concatenar las propiedades en la cadena de conexion
-class conexion
+class Conexion
 {
     public static function conectabd(){
         try {

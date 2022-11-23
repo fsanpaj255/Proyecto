@@ -4,11 +4,14 @@ class Point {
     private $y;
     private $z;
 
-    function __construct($x,$y,$z)
+    function __toString()
     {
-    $point = "POINT('$x' '$y')'.'$z'";
-    return $point;
+        $point = "POINT('$this->x' '$this->y')'.'$this->z'";
+    return $point; 
     }
+    
+
+    
     /**
      * Get the value of id
      */
