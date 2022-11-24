@@ -1,15 +1,10 @@
-<?php 
-	if (!isset($_POST['oculto'])) {
-		exit();
-	}
+<?php
     //capturamos valores
 	$identificador = $_POST['identificador'];
 	$admin = $_POST['admin'];
 	$nombre = $_POST['correo'];
 	$contrasena = $_POST['contrasena'];
-	$x= $_POST['localizacion1'];
-    $y = $_POST['localizacion2'];
-    $z = $_POST['localizacion3'];
+    $localizacion = $_POST['localizacion'];
     $imagen = $_POST['imagen'];
     $nombre = $_POST['nombre'];
     //creamos el objeto con dichos valores del formulario
@@ -19,6 +14,7 @@
       ->setAdmin($admin)
       ->setcorreo($nombre)
       ->setContrasena($contrasena)
+      ->setLocalizacion($localizacion)
       ->setImagen($imagen)
       ->setNombre($nombre);
 
@@ -26,11 +22,11 @@
     $c = new Conexion();
     $conex = $c->conectabd();
 	$rp = new repositorioParticipante($conex);
-    $rp->insert($participante,$x,$y,$z);
+    $rp->insert($participante);
 
-	if ($rp == "insertado") {
+	if ($rp == TRUE) {
 		//echo "Insertado correctamente";
-		header('Location: listadoparticipantes.php');
+		header('Location: ?menu=listadoparticipantes');
 	}else{
 		echo "Error";
 	}

@@ -6,7 +6,7 @@
 </head>
 <body>
 		<h3>Participantes</h3>
-		<table border="1px">
+		<table>
 			<tr>
 				<td>ID</td>
 				<td>Identificador</td>
@@ -21,6 +21,7 @@
 			</tr>
 
 			<?php 
+			var_dump($_SERVER["DOCUMENT_ROOT"]);
              $c = new Conexion();
              $conex = $c->conectabd();
              $rp = new repositorioParticipante($conex);
@@ -48,8 +49,9 @@
 		<!-- inicio insert -->
 		<hr>
 		<h3>Añadir participantes</h3>
-		<form method="POST" action="./view/Mantenimiento/insertarparticipantes.php">
-			<table border="2px">
+		<form method="POST" action="?menu=anadirparticipante">
+			<table>
+				<tbody></tbody>
 				<tr>
 					<td>Identificador: </td>
 					<td><input type="text" name="identificador"></td>
@@ -67,16 +69,8 @@
 					<td><input type="text" name="contrasena"></td>
 				</tr>
 				<tr>
-					<td>Localización: X </td>
-					<td><input type="text" name="localizacion1"></td>
-				</tr>
-                <tr>
-					<td>Localización: Y</td>
-					<td><input type="text" name="localizacion2"></td>
-				</tr>
-                <tr>
-					<td>Localización: Z</td>
-					<td><input type="text" name="localizacion3"></td>
+					<td>Localización: </td>
+					<td><input type="text" name="localizacion"></td>
 				</tr>
                 <tr>
 					<td>Imagen: </td>
@@ -86,9 +80,8 @@
 					<td>Nombre: </td>
 					<td><input type="text" name="nombre"></td>
 				</tr>
-				<input type="hidden" name="oculto" value="1">
 				<tr>
-					<td><input type="reset" name=""></td>
+					<td><input type="submit" value="LIMPIAR"></td>
 					<td><input type="submit" value="AÑADIR"></td>
 				</tr>
 			</table>

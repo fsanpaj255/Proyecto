@@ -18,8 +18,13 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/listadoparticipantes.php';
      
     }
-    if ($_GET['menu'] == "listadovacunas") {
+    if ($_GET['menu'] == "listadoconcursos") {
         require_once './view/Mantenimiento/listadovacunas.php';
+     
+    }
+
+    if ($_GET['menu'] == "anadirparticipante") {
+        require_once './view/Mantenimiento/insertarparticipantes.php';
      
     }
 

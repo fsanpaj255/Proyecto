@@ -1,7 +1,14 @@
 /* Add a black background color to the top navigation */
 .topnav {
+  display: flex;
+  flex-direction: row;
   background-color: #bc043c;
   overflow: hidden;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 
 /* Style the links inside the navigation bar */
@@ -44,10 +51,15 @@ button {
 }
 
 body {
-  background-color: #181717;
+  background-color: #2b2929;
 }
 
 table {
+  width: 400px;
+  height: 150px;
   background-color: white;
   color: #d04f77;
+  border-radius: 12px;
+  border-width: 1px;
+  border-color: #4b0218;
 }/*# sourceMappingURL=main.css.map */
