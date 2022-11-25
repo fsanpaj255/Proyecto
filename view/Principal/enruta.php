@@ -11,7 +11,7 @@ if (isset($_GET['menu'])) {
      
     }
     if ($_GET['menu'] == "mantenimiento") {
-        require_once './view/mantenimiento/mantenimiento.php';
+        require_once './view/Mantenimiento/mantenimiento.php';
      
     }
     if ($_GET['menu'] == "listadoparticipantes") {
@@ -19,7 +19,7 @@ if (isset($_GET['menu'])) {
      
     }
     if ($_GET['menu'] == "listadoconcursos") {
-        require_once './view/Mantenimiento/listadovacunas.php';
+        require_once './view/Mantenimiento/concursosactivos.php';
      
     }
 

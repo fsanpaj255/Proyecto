@@ -1,2 +1,2 @@
 <?php
-echo ("<p> Listado de Vacunas</p>");
+echo ("<p>Aquí irian los concursos activos</p>");

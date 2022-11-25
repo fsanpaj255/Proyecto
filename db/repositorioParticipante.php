@@ -27,6 +27,19 @@ class repositorioParticipante
     return $participante;
 
 }
+
+//usuario
+function usuario(){
+  $registro =  $this->conex->query("SELECT id,admin,correo,contrasena from participante where id=$id");
+  $datos = $registro->fetch();
+  $usuario = new Usuario();
+  $usuario
+  ->setId($datos['admin'])
+  ->setId($datos['correo'])
+  ->setId($datos['contrasena']);
+
+  return $usuario;
+}
 //Coger todos los participantes
  function getallParticipantes()
 {
