@@ -2,6 +2,7 @@
 class Principal
 {
     public static function main(){
+        session_start();
         require_once './auto/autocargador.php';
         require_once'./helpers/sesion.php';
         require_once './view/Principal/layout.php';

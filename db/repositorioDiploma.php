@@ -9,39 +9,32 @@ class repositorioDiploma
     }
 
 //coger un diploma
- function getDiploma($id)
+ function getDiploma($id,$concurso)
 {
     $registro = $this->conex->query("SELECT * from diploma where id=$id");
     $datos = $registro->fetch();
-
+    
+  
     $diploma = new Diploma();
     $diploma 
-    ->setTipo($datos['identificador'])
-    ->setAdmin($datos['admin'])
-    ->setcorreo($datos['correo'])
-    ->setContrasena($datos['contraseña'])
-    ->setLocalizacion($datos['localizacion'])
-    ->setImagen($datos['imagen'])
-    ->setNombre($datos['nombre']);
+    ->setTipo($datos['tipo'])
+    ->setMinPuntos($datos['minPuntos'])
+    ->setConcursoId($concurso->getId());
 
     return $diploma;
 
 }
 //Coger todos los diplomas
- function getallDiplomas()
+ function getallDiplomas($concursos)
 {
     $resultado =  $this->conex->query("SELECT * from diploma");
 
     while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
     $diploma = new Diploma();
       $diploma
-      ->setIdentificador($fila['identificador'])
-      ->setAdmin($fila['admin'])
-      ->setcorreo($fila['correo'])
-      ->setContrasena($fila['contraseña'])
-      ->setLocalizacion($fila['localizacion'])
-      ->setImagen($fila['imagen'])
-      ->setNombre($fila['nombre']);
+      ->setTipo($fila['identificador'])
+      ->setMinPuntos($fila['admin'])
+      ->setConcursoId($concursos->getId());
       $listadodiplomas[] = $diploma;
     }
 
@@ -49,25 +42,21 @@ class repositorioDiploma
 }
 
 //Insertar nuevo diploma //ver como se mete el imagen y el localizacion
-function insert($diploma, $x , $y , $z)
+function insert($diploma)
 {
-$point = new Point($x,$y,$z);
-$identificador = $diploma->getIdentificador();
-$admin = $diploma->getAdmin();
-$correo = $diploma->getCorreo();
-$contrasena = $diploma->getContrasena();
-$localizacion = $point;
-$imagen = $diploma->getImagen();
-$nombre = $diploma->getNombre();
+$tipo = $diploma->getTipo();
+$minpuntos = $diploma->getMinpuntos();
+$concursoid = $diploma->getAdmin();
 
-   $this->conex->query("INSERT INTO diploma VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', '$localizacion' , '$imagen', '$nombre')");
+   $this->conex->query("INSERT INTO diploma VALUES(null,'$tipo', '$minpuntos', '$concursoid')");
 }
 
  //Actualizar un  diploma por su id
- function update($diploma,$identificador,$admin,$correo,$contrasena,$localizacion,$imagen,$nombre){
+ function update($diploma,$tipo,$minpuntos,$concurso){
   //getid (que si la tiene la base de datos aunque nosotros la tengamos null)
   $id = $diploma->getId();
-    $this->conex->query("UPDATE diploma SET identificador='$identificador'admin='$admin',correo='$correo',contrasena='$contrasena',loclizacion='$localizacion',imagen='$imagen',nombre='$nombre' WHERE id='$id'");
+  $concursoid = $concurso->getId();
+    $this->conex->query("UPDATE diploma SET tipo='$tipo',minPuntos='$minpuntos', concurso_id='$concursoid' WHERE id='$id'");
   }
   
   //Borrar un diploma por su id

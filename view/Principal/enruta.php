@@ -6,6 +6,10 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == "autentifica") {
         require_once './view/Login/autentifica.php';
     }
+    if ($_GET['menu'] == "registrarse") {
+        require_once './view/Login/registrarse.php';
+    }
+
     if ($_GET['menu'] == "cerrarsesion") {
         require_once './view/Login/cerrarsesion.php';
      
@@ -25,6 +29,25 @@ if (isset($_GET['menu'])) {
 
     if ($_GET['menu'] == "anadirparticipante") {
         require_once './view/Mantenimiento/insertarparticipantes.php';
+     
+    }
+    if ($_GET['menu'] == "pruebas") {
+        require_once './pruebas/pruebas.php';
+     
+    }
+
+
+    if ($_GET['menu'] == "logeo") {
+        require_once './controllers/controladorLogin.php';
+     
+    }
+    if ($_GET['menu'] == "register") {
+        require_once './controllers/controladorRegistrar.php';
+     
+    }
+
+    if ($_GET['menu'] == "salir") {
+        require_once './view/Login/cerrarsesion.php';
      
     }
 

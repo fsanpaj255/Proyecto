@@ -1,9 +1,9 @@
 <?php
 class Sesion
 {
-    public static function iniciar()
+    public static function iniciarsesion()
     {
-        
+        session_start();
     }
 
     public static function leer(string $clave)
@@ -21,8 +21,8 @@ class Sesion
         
     }
 
-    public static function eliminar($clave)
+    public static function cerrarsesion()
     {
-        
+       session_destroy();
     }
 }

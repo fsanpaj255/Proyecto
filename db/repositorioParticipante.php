@@ -29,14 +29,15 @@ class repositorioParticipante
 }
 
 //usuario
-function usuario(){
-  $registro =  $this->conex->query("SELECT id,admin,correo,contrasena from participante where id=$id");
+function usuario($correo,$contrasena){
+  $registro =  $this->conex->query("SELECT * from participante where contraseña='$contrasena'");
   $datos = $registro->fetch();
   $usuario = new Usuario();
   $usuario
-  ->setId($datos['admin'])
-  ->setId($datos['correo'])
-  ->setId($datos['contrasena']);
+  ->setId($datos['id'])
+  ->setAdmin($datos['admin'])
+  ->setCorreo($datos['correo'])
+  ->setContrasena($datos['contraseña']);
 
   return $usuario;
 }

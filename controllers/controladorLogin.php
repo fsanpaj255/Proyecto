@@ -1,55 +1,26 @@
 <?php
-    // Conectamos a la base de datos
-    require_once '../auto/autocargador.php';
-    $c = new Conexion();
- $conex = $c->conectabd();
- 
-   if (isset($_POST['inicioSesion'])) 
+   if (isset($_POST['ingresar'])) 
     {
-        
-       session_start();
-        
-        if (isset($_POST['contraseña'])) 
+        //si detecta que hay correo y contraseña se mete
+        if (isset($_POST['correo']) && isset($_POST['contrasena'])) 
         {
-
-            var_dump($_POST);
-             
+            //capturamos el correo y la contraseña
             $correo = $_POST['correo'];
-            $contraseña = $_POST['contraseña'];
+            $contrasena = $_POST['contrasena'];
 
-            $repoPaticipante = new repositorioParticipante($conex);
-            $quey = $conex->prepare("SELECT * FROM participante WHERE correo LIKE '.$correo.' AND contraseña LIKE '.$contraseña.'");
-            $quey ->execute();
 
-            $row = $quey -> fetch(PDO::FETCH_ASSOC);
-            var_dump($quey);
-          if ($row) 
+            $c = new Conexion();
+            $conex = $c->conectabd();
+            $participante = new repositorioParticipante($conex);
+            $usuario = $participante->usuario($correo,$contrasena);
+        
+            if ($correo == $usuario->getCorreo() && $contrasena == $usuario->getContrasena())
             {
-                 $rol = $row['admin'];
-                 switch ($rol) {
-                     case '0':
-                         header('location: ../view/Mantenimiento/listadoparticipantes.php');
-                         break;
-                     
-                     case '1':
-                         header('location: ../index.php');
-                         break;
-
-                    default:
-                        header('location: ../view/Mantenimiento/listadovacunas.php');
-                        break;
-                 }
+                $rol = $usuario->getAdmin();
+                $_SESSION['rol'] = $rol;
+                header('Location: ?menu=listadoconcursos');
+            }else{
+                echo 'datos incorrectos';
             }
-            else 
-            {
-             echo "error";
-            }
-
-        }
-
-         if (isset($_GET['cerrar_sesion'])) 
-        {
-            session_unset();
-            session_destroy();
         }  
     }

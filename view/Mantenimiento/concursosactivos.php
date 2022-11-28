@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+?>
 <section class="section-products">
 		<div class="container">
 				<div class="row justify-content-center text-center">
