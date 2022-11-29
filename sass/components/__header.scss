@@ -18,6 +18,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: $font-stack;
     font-size: 14px;
   }
   
@@ -47,6 +48,7 @@
     border-color: black;
     background-image: linear-gradient(to right, #88D9FF 0%, #00ADFF 100%); 
     font-size: 14px;
+    font-family: $font-stack;
     border-bottom-style: solid;
   }
   body{
@@ -61,7 +63,7 @@
   .topnav li {
     right: 20%;
     list-style: none;
-    margin-right: 2%;
+    margin-right: 0.5%;
   }
   .topnav li a {
     background-color:#00699B;
@@ -77,7 +79,7 @@
   .topnav li ul {
     display:none;
     position:absolute;
-    top: 11.5%;
+    top: 9.5%;
   }
 
   .topnav li:hover > ul {

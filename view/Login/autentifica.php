@@ -13,8 +13,9 @@
             <div id="central">
                 <div id="login">
                     <form id="loginform" method="POST" action="?menu=logeo">
+                        <label>Correo</label>
                         <input type="text" name="correo" placeholder="Correo" required>
-                        
+                        <label>Contraseña</label>
                         <input type="password" placeholder="Contraseña" name="contrasena" required>
                         
                         <button type="submit" name="ingresar">Iniciar sesión</button>

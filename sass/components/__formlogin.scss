@@ -33,7 +33,7 @@
   }
   
   #login input {
-    font-family: 'Overpass', sans-serif;
+    font-family: $font-stack;
     font-size: 110%;
     color: #000000;
     
@@ -53,12 +53,12 @@
   }
   
   #login input::placeholder {
-    font-family: 'Overpass', sans-serif;
+    font-family: $font-stack;
     color: #434343;
   }
   
   #login button {
-    font-family: 'Overpass', sans-serif;
+    font-family: $font-stack;
     font-size: 110%;
     color:#000000;
     width: 100%;
@@ -111,5 +111,8 @@
   
   .inferior a:hover {
     color: #ffffff;
+  }
+  label{
+    font-family: $font-stack;
   }
   

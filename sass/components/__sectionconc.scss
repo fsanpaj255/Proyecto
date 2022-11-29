@@ -1,6 +1,6 @@
 a,
 a:hover {
-    text-decoration: none;
+    font-family: $font-stack;
     color: inherit;
 }
 
@@ -17,12 +17,14 @@ a:hover {
     font-size: 1rem;
     color: #00ADFF;
     font-weight: 500;
+    font-family: $font-stack;
 }
 
 .section-products .header h2 {
     font-size: 2.2rem;
     font-weight: 400;
     color: #00ADFF; 
+    font-family: $font-stack;
 }
 
 .section-products .single-product {
@@ -105,8 +107,9 @@ a:hover {
     text-align: center;
     box-shadow: 0 2px 20px rgba(0, 174, 255, 0.432);
     transition: color 0.2s;
+    text-decoration: none;
 }
 
 .product-title{
- color: #ffffff;
+ color: #00ADFF;
 }
