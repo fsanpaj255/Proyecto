@@ -12,6 +12,8 @@ echo '<div class="topnav">';
       echo '<a class="active" href="?menu=listadoconcursos"><img src="source/logo34.png"></a>';
       echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento usuarios</a>';
       echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento concursos</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento modos</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento bandas</a>';
 echo '<li><a href=""><img src="source/usuario.png"></a>';
 echo '<ul>';
 echo '<li><a href="">Mi perfil</a></li>';

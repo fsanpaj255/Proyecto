@@ -7,6 +7,7 @@
 
 <footer>
 <link rel="stylesheet" href="./css/main.css">
+<script src="../../js/mantenimientoParticipantes.js"></script>
 </footer>
 <body>
 <link rel="stylesheet" href="./css/main.css">

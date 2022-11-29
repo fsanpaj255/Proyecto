@@ -22,6 +22,10 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/listadoparticipantes.php';
      
     }
+    if ($_GET['menu'] == "listadoparticipantesajax") {
+        require_once './view/Mantenimiento/listadopartajax.php';
+     
+    }
     if ($_GET['menu'] == "listadoconcursos") {
         require_once './view/Mantenimiento/concursosactivos.php';
      
@@ -33,6 +37,10 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == "pruebas") {
         require_once './pruebas/pruebas.php';
+     
+    }
+    if ($_GET['menu'] == "api") {
+        require_once './api/getparticipantes.php';
      
     }
 
