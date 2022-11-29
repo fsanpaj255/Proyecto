@@ -1,4 +1,4 @@
 <?php
-session_destroy();
+Sesion::cerrarsesion();
 header("location:?menu=listadoconcursos");
 ?>

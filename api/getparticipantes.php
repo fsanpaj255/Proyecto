@@ -1,5 +1,7 @@
 <?php
 require_once("../auto/autocargador.php");
-
-$participantes=repositorioParticipante::getallParticipantes();
+$c = new Conexion();
+$conex = $c->conectabd();
+$rp = new repositorioParticipante($conex);
+$participantes=$rp->getallParticipantes();
 echo json_encode($participantes);

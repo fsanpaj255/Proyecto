@@ -7,20 +7,7 @@
             //capturamos el correo y la contraseña
             $correo = $_POST['correo'];
             $contrasena = $_POST['contrasena'];
-
-
-            $c = new Conexion();
-            $conex = $c->conectabd();
-            $participante = new repositorioParticipante($conex);
-            $usuario = $participante->usuario($correo,$contrasena);
-        
-            if ($correo == $usuario->getCorreo() && $contrasena == $usuario->getContrasena())
-            {
-                $rol = $usuario->getAdmin();
-                $_SESSION['rol'] = $rol;
-                header('Location: ?menu=listadoconcursos');
-            }else{
-                echo 'datos incorrectos';
-            }
+            //Utilizamos el metodo valida usuario
+            Login::Identifica($correo,$contrasena);
         }  
     }

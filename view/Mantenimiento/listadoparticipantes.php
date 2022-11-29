@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 </head>
 <body>
-		<h3>Participantes</h3>
-		<table>
+		<table class="styled-table">
+			<thead>
 			<tr>
 				<td>ID</td>
 				<td>Identificador</td>
@@ -19,16 +19,16 @@
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
-
+			</thead>
 			<?php 
-			var_dump($_SERVER["DOCUMENT_ROOT"]);
              $c = new Conexion();
              $conex = $c->conectabd();
              $rp = new repositorioParticipante($conex);
              $participantes = $rp->getallParticipantes();
 				foreach ($participantes as $dato) {
 					?>
-					<tr>
+					<tbody>
+					<tr class="active-row">
 						<td><?php echo $dato->getId(); ?></td>
 						<td><?php echo $dato->getIdentificador(); ?></td>
 						<td><?php echo $dato->getAdmin(); ?></td>
@@ -37,9 +37,10 @@
                         <td><?php echo $dato->getLocalizacion(); ?></td>
                         <td><?php echo 'imagen' ?></td>
                         <td><?php echo $dato->getNombre(); ?></td>
-						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>">Editar</a></td>
-						<td><a href="eliminarparticipantes.php?id=<?php echo $dato->id_alumno; ?>">Eliminar</a></td>
+						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class=logos src="/source/editar.png"></a></td>
+						<td><a href="eliminarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class=logos src="/source/eliminar.png"></a></td>
 					</tr>
+					</tbody>
 					<?php
 				}
 			?>
