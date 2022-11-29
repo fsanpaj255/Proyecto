@@ -14,26 +14,26 @@ function addTable() {
     table.border = '1'
     table.appendChild(tableBody);
     
-    var heading = new Array();
-    heading[0] = "Id"
-    heading[1] = "Identificador"
-    heading[2] = "Admin"
-    heading[3] = "Correo"
-    heading[4] = "Contraseña"
-    heading[5] = "Localización"
-    heading[6] = "Imagen"
-    heading[7] = "Nombre"
+    var columna = new Array();
+    columna[0] = "Id"
+    columna[1] = "Identificador"
+    columna[2] = "Admin"
+    columna[3] = "Correo"
+    columna[4] = "Contraseña"
+    columna[5] = "Localización"
+    columna[6] = "Imagen"
+    columna[7] = "Nombre"
 
     
-    var participantes = getAllParticipantes();
+    var participantes =  getAllParticipantes();
     
     //header son las columnas de la tabla
     var tr = document.createElement('TR');
     tableBody.appendChild(tr);
-    for (i = 0; i < heading.length; i++) {
+    for (i = 0; i < columna.length; i++) {
         var th = document.createElement('TH')
         th.width = '75';
-        th.appendChild(document.createTextNode(heading[i]));
+        th.appendChild(document.createTextNode(columna[i]));
         tr.appendChild(th);
     }
     

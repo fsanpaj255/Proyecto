@@ -73,7 +73,7 @@ $localizacion = $participante->getLocalizacion();
 $imagen = $participante->getImagen();
 $nombre = $participante->getNombre();
 
-   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', '$localizacion' , '$imagen', '$nombre')");
+   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', ST_GeomFromText('$localizacion') , '$imagen', '$nombre')");
    return TRUE;
 }
 

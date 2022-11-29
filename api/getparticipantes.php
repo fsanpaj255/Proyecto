@@ -4,5 +4,5 @@ $c = new Conexion();
 $conex = $c->conectabd();
 $rp = new repositorioParticipante($conex);
 $participantes=$rp->getallParticipantes();
-$participantesjson = json_encode($participantes);
-echo $participantesjson;
+var_dump($participantes);
+echo json_encode($participantes);
