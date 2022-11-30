@@ -16,6 +16,7 @@ class repositorioParticipante
 
     $participante = new Participante();
     $participante 
+    ->setId($datos['id'])
     ->setIdentificador($datos['identificador'])
     ->setAdmin($datos['admin'])
     ->setcorreo($datos['correo'])
@@ -49,6 +50,7 @@ function usuario($correo,$contrasena){
     while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
     $participante = new Participante();
       $participante
+      ->setId($fila['id'])
       ->setIdentificador($fila['identificador'])
       ->setAdmin($fila['admin'])
       ->setcorreo($fila['correo'])

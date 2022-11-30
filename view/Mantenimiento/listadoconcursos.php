@@ -29,22 +29,21 @@
 					?>
 					<tbody>
 					<tr class="active-row">
-						<td><?php echo $dato->getId(); ?></td>
-						<td><?php echo $dato->getNombre(); ?></td>
-						<td><?php echo $dato->getDesc(); ?></td>
-						<td><?php echo $dato->getFIni(); ?></td>
-						<td><?php echo $dato->getFFin(); ?></td>
-                        <td><?php echo $dato->getFIniInsc(); ?></td>
-                        <td><?php echo $dato->getFFinUnsc(); ?></td>
+						<td><?php echo $dato->getId() ?></td>
+						<td><?php echo $dato->getNombre() ?></td>
+						<td><?php echo $dato->getDesc() ?></td>
+						<td><?php echo $dato->getFIni() ?></td>
+						<td><?php echo $dato->getFFin() ?></td>
+                        <td><?php echo $dato->getFIniInsc() ?></td>
+                        <td><?php echo $dato->getFFinUnsc() ?></td>
                         <td><?php echo 'imagen'; ?></td>
 						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class="editele" src="/source/editar.png"></a></td>
-						<td><a href="?menu=eliminarconcurso<?php echo $dato->getId() ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
+						<td><a href="?menu=eliminarconcurso?id=<?php echo $dato->getId() ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
 					</tr>
-					</tbody>
 					<?php
 				}
 			?>
-			
+			</tbody>
 		</table>
 
 		<!-- inicio insert -->

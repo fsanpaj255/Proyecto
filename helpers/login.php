@@ -17,8 +17,6 @@ class Login
             $rol = $usuario->getAdmin();
             $_SESSION['rol'] = $rol;
             header('Location: ?menu=listadoconcursos');
-        }else{
-            header('Location: ?menu=errorlogin');
         }  
     }
 

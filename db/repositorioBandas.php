@@ -16,6 +16,7 @@ class repositorioBanda
 
     $banda = new Banda();
     $banda 
+    ->setId($datos['id'])
     ->setDistancia($datos['distancia'])
     ->setRangoMin($datos['rangoMin'])
     ->setRangoMax($datos['rangoMax']);
@@ -32,6 +33,7 @@ class repositorioBanda
     while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
     $banda = new Banda();
       $banda
+      ->setId($fila['id'])
     ->setDistancia($fila['distancia'])
     ->setRangoMin($fila['rangoMin'])
     ->setRangoMax($fila['rangoMax']);

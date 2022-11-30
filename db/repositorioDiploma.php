@@ -16,7 +16,8 @@ class repositorioDiploma
     
   
     $diploma = new Diploma();
-    $diploma 
+    $diploma
+    ->setId($datos['id']) 
     ->setTipo($datos['tipo'])
     ->setMinPuntos($datos['minPuntos'])
     ->setConcursoId($concurso->getId());
@@ -32,6 +33,7 @@ class repositorioDiploma
     while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
     $diploma = new Diploma();
       $diploma
+      ->setId($fila['id'])
       ->setTipo($fila['identificador'])
       ->setMinPuntos($fila['admin'])
       ->setConcursoId($concursos->getId());

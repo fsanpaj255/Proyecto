@@ -16,6 +16,7 @@ class repositorioConcurso
 
     $concurso = new Concurso();
     $concurso 
+    ->setId($datos['id'])
     ->setNombre($datos['nombre'])
     ->setDesc($datos['desc'])
     ->setFIni($datos['fini'])
@@ -35,6 +36,7 @@ class repositorioConcurso
     while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
     $concurso = new Concurso();
       $concurso
+      ->setId($fila['id'])
       ->setNombre($fila['nombre'])
       ->setDesc($fila['desc'])
       ->setFIni($fila['fini'])

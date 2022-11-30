@@ -1,13 +1,14 @@
 <?php
 
 
-$idconcurso=$_POST[$id];
+$id=$_GET['id'];
 
 $c = new Conexion();
 $conex = $c->conectabd();
 $rp = new repositorioConcurso($conex);
-$rp->delete($idconcurso);
+$rp->delete($id);
 
-header('Location: ?menu=listadoconcursostb');
+
+header('Location:?menu=listadoconcursostb');
 
 ?>
