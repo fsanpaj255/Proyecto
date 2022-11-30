@@ -3,6 +3,7 @@ echo '<header>';
 echo '<div class="topnav">';
     if (!isset($_SESSION['rol'])){
       echo '<a class="active" href="?menu=listadoconcursos"><img src="source/logo34.png"></a>';
+      echo  '<a href="#">¿Quienes somos?</a>';
       echo  '<a href="?menu=listadoconcursos">Concursos</a>';
       echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica">Iniciar sesión</button></a>';
     }else{

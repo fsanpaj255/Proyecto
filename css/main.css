@@ -85,6 +85,9 @@ table {
 
 footer {
   background-color: #00ADFF;
+  color: #000000;
+  font-size: 16px;
+  font-family: "Merriweather", sans-serif;
 }
 
 img {
@@ -376,7 +379,8 @@ a:hover {
 }
 
 .product-title {
-  color: #00ADFF;
+  color: #000000;
+  font-family: "Merriweather", sans-serif;
 }
 
 .styled-table {
@@ -389,7 +393,7 @@ a:hover {
 }
 
 .styled-table thead tr {
-  background-color: #BC043C;
+  background-color: #00ADFF;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -409,10 +413,14 @@ a:hover {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #BC043C;
+  border-bottom: 2px solid #00ADFF;
 }
 
 .styled-table tbody tr.active-row {
   font-weight: lighter;
-  color: #ffffff;
+  color: #000000;
+}
+
+.editele {
+  width: 15px;
 }/*# sourceMappingURL=main.css.map */

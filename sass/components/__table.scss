@@ -8,7 +8,7 @@
 }
 
 .styled-table thead tr {
-    background-color: #BC043C;
+    background-color: #00ADFF;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -28,10 +28,14 @@
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #BC043C;
+    border-bottom: 2px solid #00ADFF;
 }
 
 .styled-table tbody tr.active-row {
     font-weight:lighter;
-    color: #ffffff;
+    color: #000000;
+}
+
+.editele{
+    width: 15px;
 }

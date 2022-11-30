@@ -37,8 +37,8 @@
                         <td><?php echo $dato->getLocalizacion(); ?></td>
                         <td><?php echo 'imagen' ?></td>
                         <td><?php echo $dato->getNombre(); ?></td>
-						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class=logos src="/source/editar.png"></a></td>
-						<td><a href="eliminarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class=logos src="/source/eliminar.png"></a></td>
+						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class="editele" src="/source/editar.png"></a></td>
+						<td><a href="eliminarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
 					</tr>
 					</tbody>
 					<?php
