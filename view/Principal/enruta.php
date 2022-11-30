@@ -22,19 +22,27 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/listadoparticipantes.php';
      
     }
+    if ($_GET['menu'] == "listadoconcursos") {
+        require_once './view/Mantenimiento/listadoconcurso.php';
+     
+    }
     if ($_GET['menu'] == "listadoparticipantesajax") {
         require_once './view/Mantenimiento/listadopartajax.php';
      
     }
-    if ($_GET['menu'] == "listadoconcursos") {
-        require_once './view/Mantenimiento/concursosactivos.php';
+    if ($_GET['menu'] == "listadoconcursostb") {
+        require_once './view/Mantenimiento/listadoconcursos.php';
+     
+    }
+    if ($_GET['menu'] == "insertaconcursos") {
+        require_once './view/Mantenimiento/insertarconcursos.php';
+     
+    }
+    if ($_GET['menu'] == "eliminarconcurso") {
+        require_once './view/Mantenimiento/eliminarconcursos.php';
      
     }
 
-    if ($_GET['menu'] == "anadirparticipante") {
-        require_once './view/Mantenimiento/insertarparticipantes.php';
-     
-    }
     if ($_GET['menu'] == "pruebas") {
         require_once './pruebas/pruebas.php';
      
@@ -59,10 +67,17 @@ if (isset($_GET['menu'])) {
      
     }
 
+    if ($_GET['menu'] == "pantallainfo") {
+        require_once './view/Mantenimiento/pantallainfo.php';
+     
+    }
+
     
 
     
-}
+}else{
+    require_once './view/Mantenimiento/concursosactivos.php';
+   }
 
     
     //Añadir otras rutas

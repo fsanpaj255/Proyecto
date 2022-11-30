@@ -3,7 +3,7 @@ echo '<header>';
 echo '<div class="topnav">';
     if (!isset($_SESSION['rol'])){
       echo '<a class="active" href="?menu=listadoconcursos"><img src="source/logo34.png"></a>';
-      echo  '<a href="#">¿Quienes somos?</a>';
+      echo  '<a href="?menu=pantallainfo">¿Quienes somos?</a>';
       echo  '<a href="?menu=listadoconcursos">Concursos</a>';
       echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica">Iniciar sesión</button></a>';
     }else{
@@ -11,10 +11,11 @@ echo '<div class="topnav">';
         echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica"><img class="logos" src="source/userLogin2.png">Iniciar sesión</button></a>';
      }else{
       echo '<a class="active" href="?menu=listadoconcursos"><img src="source/logo34.png"></a>';
-      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento usuarios</a>';
-      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento concursos</a>';
-      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento modos</a>';
-      echo '<a class="active" href="?menu=listadoconcursos">Mantenimiento bandas</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Usuarios</a>';
+      echo '<a class="active" href="?menu=listadoconcursostb">Concursos</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Modos</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Bandas</a>';
+      echo '<a class="active" href="?menu=listadoconcursos">Premios</a>';
 echo '<li><a href=""><img src="source/usuario.png"></a>';
 echo '<ul>';
 echo '<li><a href="">Mi perfil</a></li>';

@@ -18,7 +18,7 @@ class Login
             $_SESSION['rol'] = $rol;
             header('Location: ?menu=listadoconcursos');
         }else{
-            echo 'datos incorrectos';
+            header('Location: ?menu=errorlogin');
         }  
     }
 

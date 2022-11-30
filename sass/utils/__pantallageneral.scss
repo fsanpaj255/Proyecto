@@ -1,0 +1,28 @@
+.errorlogin{
+    padding: 5%;
+}
+.errorlogin h2{
+    color: red;
+    font-family: $font-stack;
+}
+.errorlogin a{
+    color: #00ADFF;
+}
+.portada {
+ padding: 2.5%;
+}
+.portada h1{
+    font-size: 60px;
+    font-family: $font-stack;
+    color: #00ADFF;
+}
+.portada img{
+    width: 600px;
+    padding: 2%;
+}
+.portada p{
+    font-family: sans-serif;
+    padding: 2%;
+    font-weight: lighter;
+    font-size: 12px;
+}
