@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="inferior">
-                    <a href="?menu=salir">Salir</a>
+                    <a href="?menu=concursosactivos">Salir</a>
                 </div>
             </div>
         </div>

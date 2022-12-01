@@ -37,7 +37,7 @@
                         <td><?php echo $dato->getFIniInsc() ?></td>
                         <td><?php echo $dato->getFFinUnsc() ?></td>
                         <td><?php echo 'imagen'; ?></td>
-						<td><a href="?menu=editarconcursos&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/editar.png"></a></td>
+						<td><a href="?menu=editarconcurso&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/editar.png"></a></td>
 						<td><a href="?menu=eliminarconcurso&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
 					</tr>
 					<?php
