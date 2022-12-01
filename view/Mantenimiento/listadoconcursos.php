@@ -37,8 +37,8 @@
                         <td><?php echo $dato->getFIniInsc() ?></td>
                         <td><?php echo $dato->getFFinUnsc() ?></td>
                         <td><?php echo 'imagen'; ?></td>
-						<td><a href="editarparticipantes.php?id=<?php echo $dato->id_alumno; ?>"><img class="editele" src="/source/editar.png"></a></td>
-						<td><a href="?menu=eliminarconcurso?id=<?php echo $dato->getId() ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
+						<td><a href="?menu=editarconcursos&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/editar.png"></a></td>
+						<td><a href="?menu=eliminarconcurso&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
 					</tr>
 					<?php
 				}
@@ -54,31 +54,31 @@
 				<tbody></tbody>
 				<tr>
 					<td>Nombre: </td>
-					<td><input type="text" name="identificador"></td>
+					<td><input type="text" name="nombre"></td>
 				</tr>
 				<tr>
 					<td>Descripción: </td>
-					<td><input type="text" name="admin"></td>
+					<td><input type="text" name="desc"></td>
 				</tr>
 				<tr>
 					<td>Fecha de inicio: </td>
-					<td><input type="datetime-local" name="correo"></td>
+					<td><input type="datetime-local" name="fini"></td>
 				</tr>
 				<tr>
 					<td>Fecha de finalización:</td>
-					<td><input type="datetime-local" name="contrasena"></td>
+					<td><input type="datetime-local" name="ffin"></td>
 				</tr>
 				<tr>
 					<td>Fecha inicio del concurso: </td>
-					<td><input type="datetime-local" name="localizacion"></td>
+					<td><input type="datetime-local" name="finiInscrip"></td>
 				</tr>
                 <tr>
 					<td>Fecha fin del concurso:  </td>
-					<td><input type="datetime-local" name="imagen"></td>
+					<td><input type="datetime-local" name="ffinInscrip"></td>
 				</tr>
                 <tr>
 					<td>Cartel: </td>
-					<td><input type="text" name="nombre"></td>
+					<td><input type="text" name="cartel"></td>
 				</tr>
 				<tr>
 					<td><input type="reset" value="LIMPIAR"></td>

@@ -9,6 +9,6 @@ $rp = new repositorioConcurso($conex);
 $rp->delete($id);
 
 
-header('Location:?menu=listadoconcursostb');
+header('Location:?menu=listadoconcursos');
 
 ?>

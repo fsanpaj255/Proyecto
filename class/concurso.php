@@ -25,7 +25,7 @@ class Concurso {
     /**
      * Set the value of id
      */
-    public function setId($id): self
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -43,7 +43,7 @@ class Concurso {
     /**
      * Set the value of nombre
      */
-    public function setNombre($nombre): self
+    public function setNombre($nombre)
     {
         $this->nombre = $nombre;
 
@@ -61,7 +61,7 @@ class Concurso {
     /**
      * Set the value of desc
      */
-    public function setDesc($desc): self
+    public function setDesc($desc)
     {
         $this->desc = $desc;
 
@@ -79,7 +79,7 @@ class Concurso {
     /**
      * Set the value of f_ini
      */
-    public function setFIni($f_ini): self
+    public function setFIni($f_ini)
     {
         $this->f_ini = $f_ini;
 
@@ -97,7 +97,7 @@ class Concurso {
     /**
      * Set the value of f_fin
      */
-    public function setFFin($f_fin): self
+    public function setFFin($f_fin)
     {
         $this->f_fin = $f_fin;
 
@@ -115,7 +115,7 @@ class Concurso {
     /**
      * Set the value of f_ini_insc
      */
-    public function setFIniInsc($f_ini_insc): self
+    public function setFIniInsc($f_ini_insc)
     {
         $this->f_ini_insc = $f_ini_insc;
 
@@ -133,7 +133,7 @@ class Concurso {
     /**
      * Set the value of f_fin_unsc
      */
-    public function setFFinUnsc($f_fin_unsc): self
+    public function setFFinUnsc($f_fin_unsc)
     {
         $this->f_fin_unsc = $f_fin_unsc;
 
@@ -151,7 +151,7 @@ class Concurso {
     /**
      * Set the value of cartel
      */
-    public function setCartel($cartel): self
+    public function setCartel($cartel)
     {
         $this->cartel = $cartel;
 

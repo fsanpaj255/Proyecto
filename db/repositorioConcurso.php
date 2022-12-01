@@ -24,7 +24,7 @@ class repositorioConcurso
     ->setFIniInsc($datos['finiInscrip'])
     ->setFFinUnsc($datos['ffinInscrip'])
     ->setCartel($datos['cartel']);
-
+  var_dump($concurso); die;
     return $concurso;
 
 }
@@ -53,6 +53,7 @@ class repositorioConcurso
 //Insertar nuevo concurso
 function insert($concurso)
 {
+
 $nombre = $concurso->getNombre();
 $desc = $concurso->getDesc();
 $fini = $concurso->getFIni();
@@ -65,9 +66,8 @@ $cartel = $concurso->getCartel();
 }
 
  //Actualizar un  concurso por su id
- function update($concurso,$nombre,$desc,$fini,$ffin,$finiInscrip,$ffinInscrip,$cartel){
+ function update($id,$nombre,$desc,$fini,$ffin,$finiInscrip,$ffinInscrip,$cartel){
   //getid (que si la tiene la base de datos aunque nosotros la tengamos null)
-  $id = $concurso->getId();
     $this->conex->query("UPDATE concurso SET nombre='$nombre'desc='$desc',fini='$fini',ffin='$ffin',finiInscrip='$finiInscrip',ffinInscrip='$ffinInscrip',cartel='$cartel' WHERE id='$id'");
   }
   

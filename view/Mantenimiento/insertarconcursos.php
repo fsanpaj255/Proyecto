@@ -8,21 +8,20 @@
     $ffinInscrip = $_POST['ffinInscrip'];
     $cartel = $_POST['cartel'];
     //creamos el objeto con dichos valores del formulario
-    $concurso = new Concurso();
-    $concurso
-      ->setNombre($nombre)
-      ->setDesc($descripcion)
-      ->setFIni($fini)
-      ->setFFin($ffin)
-      ->setFIniInsc($localizacion)
-      ->setFFinUnsc($imagen)
-      ->setCartel($cartel);
 
+    $concurso = new Concurso();
+    $concurso->setNombre($nombre);
+    $concurso->setDesc($descripcion);
+    $concurso ->setFIni($fini);
+    $concurso->setFFin($ffin);
+    $concurso->setFIniInsc($localizacion);
+    $concurso->setFFinUnsc($imagen);
+    $concurso->setCartel($cartel);
     //insertamos el objeto
     $c = new Conexion();
     $conex = $c->conectabd();
 	$rp = new repositorioConcurso($conex);
     $rp->insert($concurso);
 
-    header('Location: ?menu=listadoconcursostb');
+    header('Location: ?menu=listadoconcursos');
 ?>

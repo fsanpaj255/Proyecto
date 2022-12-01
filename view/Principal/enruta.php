@@ -18,20 +18,16 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/mantenimiento.php';
      
     }
-    if ($_GET['menu'] == "listadoparticipantes") {
-        require_once './view/Mantenimiento/listadoparticipantes.php';
-     
-    }
     if ($_GET['menu'] == "listadoconcursos") {
-        require_once './view/Mantenimiento/listadoconcurso.php';
+        require_once './view/Mantenimiento/listadoconcursos.php';
      
     }
     if ($_GET['menu'] == "listadoparticipantesajax") {
         require_once './view/Mantenimiento/listadopartajax.php';
      
     }
-    if ($_GET['menu'] == "listadoconcursostb") {
-        require_once './view/Mantenimiento/listadoconcursos.php';
+    if ($_GET['menu'] == "concursosactivos") {
+        require_once './view/Mantenimiento/concursosactivos.php';
      
     }
     if ($_GET['menu'] == "insertaconcursos") {
@@ -40,6 +36,10 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == "eliminarconcurso") {
         require_once './view/Mantenimiento/eliminarconcursos.php';
+     
+    }
+    if ($_GET['menu'] == "editarconcurso") {
+        require_once './view/Mantenimiento/editarconcursos.php';
      
     }
 
