@@ -24,7 +24,6 @@ class repositorioConcurso
     ->setFIniInsc($datos['finiInscrip'])
     ->setFFinUnsc($datos['ffinInscrip'])
     ->setCartel($datos['cartel']);
-  var_dump($concurso); die;
     return $concurso;
 
 }
@@ -68,7 +67,7 @@ $cartel = $concurso->getCartel();
  //Actualizar un  concurso por su id
  function update($id,$nombre,$desc,$fini,$ffin,$finiInscrip,$ffinInscrip,$cartel){
   //getid (que si la tiene la base de datos aunque nosotros la tengamos null)
-    $this->conex->query("UPDATE concurso SET nombre='$nombre'desc='$desc',fini='$fini',ffin='$ffin',finiInscrip='$finiInscrip',ffinInscrip='$ffinInscrip',cartel='$cartel' WHERE id='$id'");
+    $this->conex->query("UPDATE `concurso` SET `nombre`='$nombre', `desc` ='$desc', `fini`='$fini', `ffin`='$ffin', `finiInscrip`='$finiInscrip', `ffinInscrip`='$ffinInscrip', `cartel`='$cartel' WHERE `concurso`.`id` ='$id';");
   }
   
   //Borrar un concurso por su id

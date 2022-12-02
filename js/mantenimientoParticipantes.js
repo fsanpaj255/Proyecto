@@ -26,6 +26,7 @@ function addTable() {
 
     
     var participantes =  getAllParticipantes();
+    console.log(participantes);
     
     //header son las columnas de la tabla
     var tr = document.createElement('TR');

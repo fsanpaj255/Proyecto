@@ -64,6 +64,31 @@ function usuario($correo,$contrasena){
     return $listadoparticipantes;
 }
 
+//esto la necesito para usar mi info en el json encode sin que sean publicas las propiedades de mis objetos
+function getallParticipantesArray()
+{
+    $arrayparticipantes = [];
+    $resultado =  $this->conex->query("SELECT * from participante");
+
+   while ($datos = $resultado->fetch()){
+    $participante= array(
+      'id' => $datos['id'],
+      'identificador' => $datos['identificador'],
+      'admin' => $datos['admin'],
+      'correo' => $datos['correo'],
+      'contraseña' => $datos['contraseña'],
+      'localizacion' => $datos['localizacion'],
+      'imagen' => $datos['imagen'],
+      'nombre' => $datos['nombre']
+    );
+    array_push($arrayparticipantes,$participante);
+    }
+    return $arrayparticipantes;
+   }
+
+    
+
+
 //Insertar nuevo participante //ver como se mete el imagen y el localizacion
 function insert($participante)
 {

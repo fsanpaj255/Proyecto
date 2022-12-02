@@ -10,9 +10,7 @@
 $conex = $c->conectabd();
 $rp = new repositorioConcurso($conex);
 $concurso = $rp->getConcurso($id);
-var_dump($concurso);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +53,8 @@ var_dump($concurso);
 					<td><input type="text" name="cartel" value="<?php echo $concurso->getCartel() ?>"></td>
 				</tr>
 				<tr>
-					<td><input type="reset" value="LIMPIAR"></td>
+                    <input type="hidden" value="oculto">
+					<input type="hidden" name="id2" value="<?php echo $concurso->getId() ?>">
 					<td><input type="submit" value="EDITAR"></td>
 				</tr>
 			</table>

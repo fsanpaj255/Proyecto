@@ -75,12 +75,17 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/pantallainfo.php';
      
     }
+    
+    if ($_GET['menu'] == "listarparticipantes") {
+        require_once './view/Mantenimiento/Participantes/listarparticipantes.php';
+     
+    }
 
     
 
     
 }else{
-    require_once './view/Mantenimiento/concursosactivos.php';
+    require_once './view/Mantenimiento/concursos/concursosactivos.php';
    }
 
     

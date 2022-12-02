@@ -11,7 +11,7 @@ echo '<div class="topnav">';
         echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica"><img class="logos" src="source/userLogin2.png">Iniciar sesión</button></a>';
      }else{
       echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
-      echo '<a class="active" href="?menu=">Usuarios</a>';
+      echo '<a class="active" href="?menu=listarparticipantes">Usuarios</a>';
       echo '<a class="active" href="?menu=listadoconcursos">Concursos</a>';
       echo '<a class="active" href="?menu=">Modos</a>';
       echo '<a class="active" href="?menu=">Bandas</a>';

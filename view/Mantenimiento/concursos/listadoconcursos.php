@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Lista de alumnos</title>
+	<title>Lista de concursos</title>
 	<meta charset="utf-8">
 </head>
 <body>
