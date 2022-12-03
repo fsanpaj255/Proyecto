@@ -4,6 +4,7 @@ async function getAllParticipantes(){
     .catch(err=>console.log('FALLASTE',err));
     let data = await JSON.parse(JSON.stringify(response));
     return data;
+    console.log(data);
 }
 
 function addTable() {
