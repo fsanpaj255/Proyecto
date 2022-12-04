@@ -1,5 +1,5 @@
 <?php
-class repositorioBanda
+class repositorioBandas
 {
    private $conex;
     
@@ -42,6 +42,23 @@ class repositorioBanda
 
     return $listadobandas;
 }
+
+function getallBandasArray()
+{
+    $arraybandas= [];
+    $resultado =  $this->conex->query("SELECT * from banda");
+
+   while ($datos = $resultado->fetch()){
+    $banda= array(
+      'id' => $datos['id'],
+      'distancia' => $datos['distancia'],
+      'rangoMin' => $datos['rangoMin'],
+      'rangoMax' => $datos['rangoMax']
+    );
+    array_push($arraybandas,$banda);
+    }
+    return $arraybandas;
+   }
 
 //Insertar nuevo banda //ver como se mete el imagen y el localizacion
 function insert($banda)

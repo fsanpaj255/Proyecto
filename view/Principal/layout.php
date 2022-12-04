@@ -7,7 +7,7 @@
 
 <footer>
 <link rel="stylesheet" href="./css/main.css">
-<script src="../../js/mantenimientoParticipantes.js"></script>
+<script src="../../js/mantenimientoBandas.js"></script>
 </footer>
 <body>
 <link rel="stylesheet" href="./css/main.css">

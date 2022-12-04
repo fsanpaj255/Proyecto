@@ -14,7 +14,7 @@ echo '<div class="topnav">';
       echo '<a class="active" href="?menu=listarparticipantes">Usuarios</a>';
       echo '<a class="active" href="?menu=listadoconcursos">Concursos</a>';
       echo '<a class="active" href="?menu=">Modos</a>';
-      echo '<a class="active" href="?menu=">Bandas</a>';
+      echo '<a class="active" href="?menu=listarbandas">Bandas</a>';
       echo '<a class="active" href="?menu=">Premios</a>';
 echo '<li><a href=""><img src="source/usuario.png"></a>';
 echo '<ul>';

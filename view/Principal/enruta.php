@@ -52,7 +52,7 @@ if (isset($_GET['menu'])) {
      
     }
     if ($_GET['menu'] == "api") {
-        require_once './api/getparticipantes.php';
+        require_once './api/bandas/getbandas.php';
      
     }
 
@@ -76,8 +76,8 @@ if (isset($_GET['menu'])) {
      
     }
     
-    if ($_GET['menu'] == "listarparticipantes") {
-        require_once './view/Mantenimiento/Participantes/listarparticipantes.php';
+    if ($_GET['menu'] == "listarbandas") {
+        require_once './view/Mantenimiento/Bandas/listarbandas.php';
      
     }
 

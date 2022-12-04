@@ -1,5 +1,5 @@
-async function getAllParticipantes(){
-    let response = await fetch('./api/getparticipantes.php')
+async function getAllBandas(){
+    let response = await fetch('./api/getbandas.php')
     .then(response=> response.json())
     .catch(err=>console.log('FALLASTE',err));
     let data = await JSON.parse(JSON.stringify(response));
@@ -8,26 +8,22 @@ async function getAllParticipantes(){
 }
 
 function addTable() {
-    var myTableDiv = document.getElementById("listadoparticipantes")
-    var table = document.createElement('TABLE')
-    var tableBody = document.createElement('TBODY')
+    var myTableDiv = document.getElementById("listadobandas")
+    var table = document.createElement('table')
+    var tableBody = document.createElement('tbody')
     
     table.border = '1'
     table.appendChild(tableBody);
     
     var columna = new Array();
     columna[0] = "Id"
-    columna[1] = "Identificador"
-    columna[2] = "Admin"
-    columna[3] = "Correo"
-    columna[4] = "Contraseña"
-    columna[5] = "Localización"
-    columna[6] = "Imagen"
-    columna[7] = "Nombre"
+    columna[1] = "Distancia"
+    columna[2] = "Rango Mínimo"
+    columna[3] = "Rango Máximo"
 
     
-    var participantes =  getAllParticipantes();
-    console.log(participantes);
+    var bandas =  getAllBandas();
+
     
     //header son las columnas de la tabla
     var tr = document.createElement('TR');
@@ -39,12 +35,12 @@ function addTable() {
         tr.appendChild(th);
     }
     
-    //participantes es el json que se pliega en filas de la tabla con este for
-    for (i = 0; i < participantes.length; i++) {
+    //bandas es el json que se pliega en filas de la tabla con este for
+    for (i = 0; i < bandas.length; i++) {
         var tr = document.createElement('TR');
-        for (j = 0; j < participantes[i].length; j++) {
+        for (j = 0; j < bandas[i].length; j++) {
             var td = document.createElement('TD')
-            td.appendChild(document.createTextNode(participantes[i][j]));
+            td.appendChild(document.createTextNode(bandas[i][j]));
             tr.appendChild(td)
         }
         tableBody.appendChild(tr);
