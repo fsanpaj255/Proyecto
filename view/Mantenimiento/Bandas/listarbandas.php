@@ -7,21 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-<button onclick="traer()">OBTENER</button>
-    <div>
-        <table>
+    <div class="contenedor">
+        <button type="button" class="btn btn-primary" id="botonListaBandas" >Ajax</button>
+        <div class="alert alert-primary" role="alert">
+            <strong id="con"></strong>
+        </div>
+        <table class="styled-table">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Distancia</th>
-                    <th>Rango maximo</th>
-                    <th>Rango minimo</th>
-                </tr>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Distancia</th>
+                <th scope="col">Rango Mínimo</th>
+                <th scope="col">Rango Máximo</th>
+              </tr>
             </thead>
-            <tbody id="contenido">
-               
+            <tbody id="loseleccionado">
+            <tr>
+                
+              </tr>
             </tbody>
-        </table>
+          </table>
     </div>
 </body>
 </html>
