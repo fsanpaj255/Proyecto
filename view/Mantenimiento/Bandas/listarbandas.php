@@ -18,12 +18,13 @@
                 <th scope="col">Id</th>
                 <th scope="col">Distancia</th>
                 <th scope="col">Rango Mínimo</th>
-                <th scope="col">Rango Máximo</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
               </tr>
             </thead>
             <tbody id="loseleccionado">
             <tr>
-                
+
               </tr>
             </tbody>
           </table>
