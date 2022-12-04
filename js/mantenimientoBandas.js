@@ -1,6 +1,6 @@
 window.onload = function(){
-let boton=document.getElementById('botonListaBandas');
-boton.onclick=function(){
+
+
     let xhttp=new XMLHttpRequest();
     xhttp.open('GET','./api/bandas/getbandas.php',true);
     xhttp.send();
@@ -33,5 +33,5 @@ boton.onclick=function(){
     }
 }
 }
-}
+
 }

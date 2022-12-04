@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Listado de bandas</h3>
     <div class="contenedor">
-        <button type="button" class="btn btn-primary" id="botonListaBandas" >Ajax</button>
         <div class="alert alert-primary" role="alert">
             <strong id="con"></strong>
         </div>
@@ -18,6 +18,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Distancia</th>
                 <th scope="col">Rango Mínimo</th>
+                <th scope="col">Rango Máximo</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
               </tr>
