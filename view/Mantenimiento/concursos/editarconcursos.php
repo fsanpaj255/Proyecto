@@ -55,7 +55,7 @@ $concurso = $rp->getConcurso($id);
 				<tr>
                     <input type="hidden" value="oculto">
 					<input type="hidden" name="id2" value="<?php echo $concurso->getId() ?>">
-					<td><input type="submit" value="EDITAR"></td>
+					<td><input type="submit" value="EDITAR" class="button-azul"></td>
 				</tr>
 			</table>
 		</form>

@@ -18,7 +18,7 @@
                         <label>Contraseña</label>
                         <input type="password" placeholder="Contraseña" name="contrasena" required>
                         
-                        <button type="submit" name="ingresar">Iniciar sesión</button>
+                        <button type="submit" name="ingresar" class="button-azul">Iniciar sesión</button>
                     </form>
                     <div class="pie-form">
                         <a href="#">¿Perdiste tu contraseña?</a>

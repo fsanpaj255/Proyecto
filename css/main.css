@@ -49,6 +49,19 @@ table {
   border-spacing: 0;
 }
 
+.button-azul {
+  border: 2px;
+  width: 140px;
+  height: 25px;
+  color: white;
+  border-radius: 25px;
+  border-color: black;
+  background-image: linear-gradient(to right, #88D9FF 0%, #00ADFF 100%);
+  font-size: 14px;
+  font-family: "Merriweather", sans-serif;
+  border-bottom-style: solid;
+}
+
 .topnav {
   display: flex;
   flex-direction: row;
@@ -92,19 +105,6 @@ footer {
 
 img {
   width: 45px;
-}
-
-button-azul {
-  border: 2px;
-  width: 140px;
-  height: 25px;
-  color: white;
-  border-radius: 25px;
-  border-color: black;
-  background-image: linear-gradient(to right, #88D9FF 0%, #00ADFF 100%);
-  font-size: 14px;
-  font-family: "Merriweather", sans-serif;
-  border-bottom-style: solid;
 }
 
 body {
@@ -433,8 +433,14 @@ a:hover {
 
 .buttonanadir {
   margin-left: 2%;
+  margin-bottom: 0.5%;
+  padding: 0%;
   border-style: none;
   background-color: white;
+}
+
+.buttonanadir img {
+  width: 25px;
 }
 
 .errorlogin {

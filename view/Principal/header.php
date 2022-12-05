@@ -5,7 +5,7 @@ echo '<div class="topnav">';
       echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
       echo  '<a href="?menu=pantallainfo">¿Quienes somos?</a>';
       echo  '<a href="?menu=concursosactivos">Concursos</a>';
-      echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica">Iniciar sesión</button></a>';
+      echo '<a href="?menu=autentifica"><button type="submit" class="button-azul" href="?menu=autentifica">Iniciar sesión</button></a>';
     }else{
       if ($_SESSION['rol'] == 0){
         echo '<a href="?menu=autentifica"><button type="submit" href="?menu=autentifica"><img class="logos" src="source/userLogin2.png">Iniciar sesión</button></a>';

@@ -14,8 +14,8 @@
     $concurso->setDesc($descripcion);
     $concurso ->setFIni($fini);
     $concurso->setFFin($ffin);
-    $concurso->setFIniInsc($localizacion);
-    $concurso->setFFinUnsc($imagen);
+    $concurso->setFIniInsc($finiInscrip);
+    $concurso->setFFinUnsc($ffinInscrip);
     $concurso->setCartel($cartel);
     //insertamos el objeto
     $c = new Conexion();

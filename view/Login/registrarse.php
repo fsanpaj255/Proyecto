@@ -24,7 +24,7 @@
                         <label>Localización</label>
                         <input type="text" name="localizacion" placeholder="Localización" required>
                         
-                        <button type="submit" title="registrar" name="registrar">Registrarse</button>
+                        <button type="submit" title="registrar" name="registrar" class="button-azul">Registrarse</button>
                     </form>
                     </div>
                     <div class="inferior">

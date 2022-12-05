@@ -3,13 +3,17 @@ window.addEventListener("load", function () {
     var nuevo = document.getElementById("añadir");
 
     nuevo.onclick = function () {
-        ////Crear el objeto formulario, titulo, input y boton
+        //Creamos los elementos
         let formulario=document.createElement("form");
-        formulario.setAttribute("class","styled-table");
+        
+        let table = document.createElement("table");
+        table.setAttribute("class","styled-table");
+
+        let trtable = document.createElement("tr");
         let titulo=document.createElement("label");
-        let cajaTextNombres=document.createElement("input");
-        let cajaTextContrasena=document.createElement("input");
-        let cajaTextEmail=document.createElement("input");
+        let inputDistancia=document.createElement("input");
+        let inputRangomin=document.createElement("input");
+        let inputRangomax=document.createElement("input");
         let cajaTextIndicativo=document.createElement("input");
         let cajaTextLocalizacion=document.createElement("input");
         let cajaTextImagen=document.createElement("input");
@@ -22,26 +26,26 @@ window.addEventListener("load", function () {
             //formulario.setAttribute('id', "form");
             formulario.setAttribute('class', "styled-table");
  
-            ////Asignar atributos al objeto caja de texto de NOMBRES
-            cajaTextNombres.setAttribute('type', "text");
-            cajaTextNombres.setAttribute('id', "nombre");
-            cajaTextNombres.setAttribute('name', "nombre");
-            cajaTextNombres.setAttribute('placeholder', "Nombre");
-            cajaTextNombres.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
+            //Atributos del input distancia
+            inputDistancia.setAttribute('type', "text");
+            inputDistancia.setAttribute('id', "nombre");
+            inputDistancia.setAttribute('name', "nombre");
+            inputDistancia.setAttribute('placeholder', "Nombre");
+            inputDistancia.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
  
-            ////Asignar atributos al objeto caja de texto de CONTRASENA
-            cajaTextContrasena.setAttribute('type', "text");
-            cajaTextContrasena.setAttribute('id', "contrasena");
-            cajaTextContrasena.setAttribute('name', "contrasena");
-            cajaTextContrasena.setAttribute('placeholder', "Contraseña");
-            cajaTextContrasena.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
+            ////Atributos del input rango minimo
+            inputRangomin.setAttribute('type', "text");
+            inputRangomin.setAttribute('id', "contrasena");
+            inputRangomin.setAttribute('name', "contrasena");
+            inputRangomin.setAttribute('placeholder', "Contraseña");
+            inputRangomin.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
  
-            ////Asignar atributos al objeto caja de texto de EMAIL
-            cajaTextEmail.setAttribute('type', "text");
-            cajaTextEmail.setAttribute('name', "email");
-            cajaTextEmail.setAttribute('id', "email");
-            cajaTextEmail.setAttribute('placeholder', "Email");
-            cajaTextEmail.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
+            ////Atributos del input rango maximo
+            inputRangomax.setAttribute('type', "text");
+            inputRangomax.setAttribute('name', "email");
+            inputRangomax.setAttribute('id', "email");
+            inputRangomax.setAttribute('placeholder', "Email");
+            inputRangomax.setAttribute('style', "width:100%;margin: 10px 0px;padding: 5px");
  
             ////Asignar atributos al objeto caja de texto de INDICATIVO
             cajaTextIndicativo.setAttribute('type', "text");
@@ -87,9 +91,9 @@ window.addEventListener("load", function () {
  
             titulo.innerHTML='<h1>Bandas</h1>';
             formulario.appendChild(titulo);
-            formulario.appendChild(cajaTextNombres);
-            formulario.appendChild(cajaTextContrasena);
-            formulario.appendChild(cajaTextEmail);
+            formulario.appendChild(inputDistancia);
+            formulario.appendChild(inputRangomin);
+            formulario.appendChild(inputRangomax);
             formulario.appendChild(cajaTextIndicativo);
             formulario.appendChild(cajaTextLocalizacion);
             formulario.appendChild(cajaTextImagen);
