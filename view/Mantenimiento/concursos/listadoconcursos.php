@@ -37,7 +37,7 @@
 						<td><?php echo $dato->getFFin() ?></td>
                         <td><?php echo $dato->getFIniInsc() ?></td>
                         <td><?php echo $dato->getFFinUnsc() ?></td>
-                        <td><img src="/source/<?php echo $dato->getCartel() ?>"></td>
+                        <td><img  src="/source/<?php echo $dato->getCartel() ?>"></td>
 						<td><a href="?menu=editarconcurso&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/editar.png"></a></td>
 						<td><a href="?menu=eliminarconcurso&id=<?php echo $dato->getId(); ?>"><img class="editele" src="/source/borrarphp.png"></a></td>
 					</tr>
@@ -79,7 +79,7 @@
 				</tr>
                 <tr>
 					<td>Cartel: </td>
-					<td><input type="file" name="imagen" id="imagen"></td>
+					<td><input type="file" name="cartel"></td>
 				</tr>
 				<tr>
 					<td><input type="reset" value="LIMPIAR"></td>
