@@ -464,4 +464,10 @@ a:hover {
   padding: 2%;
   font-weight: lighter;
   font-size: 12px;
+}
+
+.h3enunciado {
+  font-family: "Merriweather", sans-serif;
+  color: #00ADFF;
+  padding: 2%;
 }/*# sourceMappingURL=main.css.map */

@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
-		<h1>Listado concursos</h1>
+		<h2 class="h3enunciado">Listado concursos</h2>
 		<table class="styled-table">
 			<thead>
 			<tr>

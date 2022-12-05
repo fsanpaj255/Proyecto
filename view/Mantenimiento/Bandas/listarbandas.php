@@ -7,28 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Listado de bandas</h3>
+    <h2 class="h3enunciado">Listado de bandas</h2>
+    <button type="button" name="añadir" id="añadir" >Añadir</button>
     <div class="contenedor">
         <div class="alert alert-primary" role="alert">
             <strong id="con"></strong>
         </div>
         <table class="styled-table">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Distancia</th>
-                <th scope="col">Rango Mínimo</th>
-                <th scope="col">Rango Máximo</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
-              </tr>
-            </thead>
-            <tbody id="loseleccionado">
-            <tr>
 
-              </tr>
-            </tbody>
-          </table>
+        </table>
     </div>
 </body>
 </html>
