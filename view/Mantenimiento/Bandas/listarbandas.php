@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2 class="h3enunciado">Listado de bandas</h2>
-    <button type="button" name="añadir" id="añadir" >Añadir</button>
+    <button type="button" class="buttonanadir" name="añadir" id="añadir" ><img src="../../../source/mas.png"></button>
     <div class="contenedor">
         <div class="alert alert-primary" role="alert">
             <strong id="con"></strong>

@@ -5,6 +5,7 @@ window.addEventListener("load", function () {
     nuevo.onclick = function () {
         ////Crear el objeto formulario, titulo, input y boton
         let formulario=document.createElement("form");
+        formulario.setAttribute("class","styled-table");
         let titulo=document.createElement("label");
         let cajaTextNombres=document.createElement("input");
         let cajaTextContrasena=document.createElement("input");

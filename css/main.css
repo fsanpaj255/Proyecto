@@ -94,7 +94,7 @@ img {
   width: 45px;
 }
 
-button {
+button-azul {
   border: 2px;
   width: 140px;
   height: 25px;
@@ -429,6 +429,12 @@ a:hover {
   margin: 2%;
   font-family: "Merriweather", sans-serif;
   color: #00ADFF;
+}
+
+.buttonanadir {
+  margin-left: 2%;
+  border-style: none;
+  background-color: white;
 }
 
 .errorlogin {

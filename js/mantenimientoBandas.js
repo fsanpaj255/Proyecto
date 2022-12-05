@@ -65,11 +65,31 @@ thead.appendChild(fila_1);
                 row_2_data_3.innerHTML = data[i].rangoMin;
                 let row_2_data_4 = document.createElement('td');
                 row_2_data_4.innerHTML = data[i].rangoMax;
+                //Editar
+                let row_2_data_5 = document.createElement('td');
+                let aeditar = document.createElement('a');
+                let imgedit = document.createElement('img');
+                imgedit.setAttribute("src","./source/editar.png");
+                imgedit.setAttribute("class","editele")
+                row_2_data_5.appendChild(aeditar);
+                aeditar.appendChild(imgedit);
+                 
+                
+                //Eliminar
+                let row_2_data_6 = document.createElement('td');
+                let aeliminar = document.createElement('a');
+                let imgeliminar = document.createElement('img');
+                imgeliminar.setAttribute("src","./source/borrarphp.png");
+                imgeliminar.setAttribute("class","editele")
+                row_2_data_6.appendChild(aeliminar);
+                aeliminar.appendChild(imgeliminar)
 
                 row_2.appendChild(row_2_data_1);
                 row_2.appendChild(row_2_data_2);
                 row_2.appendChild(row_2_data_3);
                 row_2.appendChild(row_2_data_4);
+                row_2.appendChild(row_2_data_5);
+                row_2.appendChild(row_2_data_6);
                 tbody.appendChild(row_2);
 
             }
