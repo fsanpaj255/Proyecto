@@ -1,4 +1,4 @@
 <?php
 Sesion::cerrarsesion();
-header("location:?menu=listadoconcursos");
+header("location:?menu=concursosactivos");
 ?>
