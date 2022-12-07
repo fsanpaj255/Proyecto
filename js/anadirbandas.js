@@ -9,34 +9,26 @@ window.addEventListener("load", function () {
         let formulario=document.createElement("form");
         let titulo=document.createElement("label");
 
-        let table = document.createElement("table");
-        table.setAttribute("class","styled-table");
+        //ESTOESUNPOCODESEPARACIONTRAMPA
+        let espacio1 = document.createElement("br");
+        let espacio2 = document.createElement("br");
+        let espacio3 = document.createElement("br");
 
         //Distancia
-        let tr1 = document.createElement("tr");
-
-        let td1 = document.createElement("td");
         let label1 = document.createElement("label");
 
-        let td2 = document.createElement("td");
         let input1 = document.createElement("input");
 
          //Rangomin
-         let tr2 = document.createElement("tr");
-
-         let td3 = document.createElement("td");
          let label2 = document.createElement("label");
  
          let td4 = document.createElement("td");
          let input2 = document.createElement("input");
 
           //Rangomax
-        let tr3 = document.createElement("tr");
 
-        let td5 = document.createElement("td");
         let label3 = document.createElement("label");
 
-        let td6 = document.createElement("td");
         let input3 = document.createElement("input");
 
         //boton
@@ -69,31 +61,18 @@ window.addEventListener("load", function () {
             boton.setAttribute("class","button-azul");
             //boton.setAttribute('onclick', "alert('Se ha añadido un nuevo bandas')");
  
-            titulo.innerHTML='<h1>Bandas</h1>';
-            formulario.appendChild(table);
+            
+            //Unimos todo
+            formulario.appendChild(label1);
+            formulario.appendChild(input1);
+            formulario.appendChild(espacio1);
+            formulario.appendChild(label2);
+            formulario.appendChild(input2);
+            formulario.appendChild(espacio2);
+            formulario.appendChild(label3);
+            formulario.appendChild(input3);
+            formulario.appendChild(espacio3);
 
-            //unimos distancia
-            table.appendChild(tr1);
-            tr1.appendChild(td1);
-            td1.appendChild(label1);
-            tr1.appendChild(td2);
-            td2.appendChild(input1);
-
-             //unimos rangomin
-             table.appendChild(tr2);
-             tr1.appendChild(td3);
-             td1.appendChild(label2);
-             tr1.appendChild(td4);
-             td2.appendChild(input2);
-
-              //unimos rangomax
-            table.appendChild(tr3);
-            tr1.appendChild(td5);
-            td1.appendChild(label3);
-            tr1.appendChild(td6);
-            td2.appendChild(input3);
-
-            titulo.innerHTML='<h1>Bandas</h1>';
             formulario.appendChild(boton);
             document.getElementById('cuerpo').appendChild(formulario);//Agregar el formulario a la etiqueta con el ID		
             

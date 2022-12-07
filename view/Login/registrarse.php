@@ -14,15 +14,19 @@
                 <div id="login">
                     <form id="loginform" method="POST" action="">
                         <label>Nombre de usuario</label>
-                        <input type="text" name="nombreusuario" placeholder="Nombre de usuario" required>
+                        <input type="text" name="nombreusuario" required>
                         <label>Correo electrónico</label>
-                        <input type="text" name="correo" placeholder="Correo electrónico" required>
+                        <input type="text" name="correo"  required>
                         <label>Contraseña</label>
-                        <input type="password" name="contrasena" placeholder="Contraseña" required>
+                        <input type="password" name="contrasena" required>
                         <label>Foto</label>
                         <input type="file" name="camara">
-                        <label>Localización</label>
-                        <input type="text" name="localizacion" placeholder="Localización" required>
+                        
+                        <label>Latitud</label>
+                        <input type="text" name="latitud" id="latitudex" required>
+                        <label>Longitud</label>
+                        <input type="text" name="longitud" id="longitudey"  required>
+                        <button type="submit" name="localizacionbtn" id="btncapturar" class="button-azul">Capturar Localización</button>
                         
                         <button type="submit" title="registrar" name="registrar" class="button-azul">Registrarse</button>
                     </form>
