@@ -61,12 +61,8 @@ function getallBandasArray()
    }
 
 //Insertar nuevo banda //ver como se mete el imagen y el localizacion
-function insert($banda)
+function insert($distancia,$rangomin,$rangomax)
 {
-$distancia = $banda->getDistancia();
-$rangomin = $banda->getRangoMin();
-$rangomax = $banda->getRangoMax();
-
 
    $this->conex->query("INSERT INTO banda VALUES(null,'$distancia', '$rangomin', '$rangomax')");
 }

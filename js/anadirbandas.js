@@ -6,8 +6,7 @@ window.addEventListener("load", function () {
         //Creamos los elementos
 
 
-        let formulario=document.createElement("form");
-        let titulo=document.createElement("label");
+        let formulario=document.createElement("form"); 
 
         //ESTOESUNPOCODESEPARACIONTRAMPA
         let espacio1 = document.createElement("br");
@@ -16,28 +15,23 @@ window.addEventListener("load", function () {
 
         //Distancia
         let label1 = document.createElement("label");
-
         let input1 = document.createElement("input");
 
          //Rangomin
          let label2 = document.createElement("label");
- 
-         let td4 = document.createElement("td");
          let input2 = document.createElement("input");
 
           //Rangomax
 
         let label3 = document.createElement("label");
-
         let input3 = document.createElement("input");
 
         //boton
         let boton=document.createElement("input");
- 
         
         //Asignar atributos al objeto formulario
         formulario.setAttribute('method', "post");
-        formulario.setAttribute('action', "#");
+        formulario.setAttribute('action', "./api/bandas/ingresarbandas.php");
        
  
             //Atributos  distancia
@@ -77,6 +71,8 @@ window.addEventListener("load", function () {
             document.getElementById('cuerpo').appendChild(formulario);//Agregar el formulario a la etiqueta con el ID		
             
         modal(formulario);
+
+
     }
 
 })
