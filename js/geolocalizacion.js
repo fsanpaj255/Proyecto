@@ -3,7 +3,7 @@ window.addEventListener("load",function() {
   const latitudx  = document.getElementById("latitudex");
   const longitudy  = document.getElementById("longitudey");
 
-  function geoLocation() {
+  function getLocation() {
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition);
     }else{
