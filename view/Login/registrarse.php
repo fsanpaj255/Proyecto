@@ -26,8 +26,7 @@
                         <input type="text" name="latitud" id="latitudex" required>
                         <label>Longitud</label>
                         <input type="text" name="longitud" id="longitudey"  required>
-                        <button type="submit" name="localizacionbtn" id="btncapturar" class="button-azul">Capturar Localización</button>
-                        
+                        <input type="button" name="localizacionbtn" id="btncapturar" class="button-azul" value="Capturar Localización">
                         <button type="submit" title="registrar" name="registrar" class="button-azul">Registrarse</button>
                     </form>
                     </div>
