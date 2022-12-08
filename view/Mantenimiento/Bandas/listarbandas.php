@@ -8,14 +8,7 @@
 </head>
 <body>
     <h2 class="h3enunciado">Listado de bandas</h2>
-    <button type="button" class="buttonanadir" name="añadir" id="añadir" ><img src="../../../source/mas.png"></button>
-    <div class="contenedor">
-        <div class="alert alert-primary" role="alert">
-            <strong id="con"></strong>
-        </div>
-        <table class="styled-table">
-
-        </table>
-    </div>
+    <button type="button" class="buttonanadir" name="añadir" id="anadir" ><img src="../../../source/mas.png"></button>
+    <strong id="con"></strong>
 </body>
 </html>

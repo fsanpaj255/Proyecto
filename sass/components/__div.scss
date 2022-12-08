@@ -22,7 +22,7 @@
     position: absolute;
     background: #00ADFF;
     height: 20px;
-    width: 100%;
+    width: 96.7%;
     padding: 10px;
 }
 .div4{
@@ -31,19 +31,21 @@
     height: 330px;
     width: 120%;
     padding: 10%;
-    overflow-y: scroll;
 }
 
 .div4 form{
-    
+    padding: 2%;
+    margin: 2%;
 }
-
+.div4 form input{
+    margin: 1%;
+}
 
 
 
 .span1{
     position: absolute;
-    width: 20px;
+    width: 18px;
     top: 0;
     right: 0;
     margin: 10px;

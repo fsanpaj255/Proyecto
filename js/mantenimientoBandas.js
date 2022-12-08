@@ -34,9 +34,6 @@ fila_1.appendChild(encabezado_5);
 fila_1.appendChild(encabezado_6);
 thead.appendChild(fila_1);
 
-
-    //anadimos la tabla a php
-
     //pedimos el json y el status
     let xhttp=new XMLHttpRequest();
     xhttp.open('GET','./api/bandas/getbandas.php',true);
@@ -97,9 +94,9 @@ thead.appendChild(fila_1);
     }
 }
 }
-var nuevo = document.getElementById("añadir");
+var buttonanadir = document.getElementById("anadir");
 
-nuevo.onclick = function () {
+    buttonanadir.onclick = function (){
     //Creamos los elementos
 
     let body = document.createElement("body");
@@ -126,9 +123,6 @@ nuevo.onclick = function () {
     //boton
         let boton=document.createElement("input");
     
-
-   
-
         //Atributos  distancia
         label1.innerHTML = "Distancia";
         input1.setAttribute('type', "text");
@@ -148,12 +142,9 @@ nuevo.onclick = function () {
         input1.setAttribute('id', "rangomax");
     
         ////Asignar atributos al objeto boton
-        boton.setAttribute('type', "button");	
+        boton.setAttribute('type', "submit");	
         boton.setAttribute('value', "ingresar");
         boton.setAttribute("class","button-azul");
-        //boton.setAttribute('onclick', "alert('Se ha añadido un nuevo bandas')");
-
-      
         
         //Unimos todo
         body.appendChild(formulario);
@@ -173,9 +164,9 @@ nuevo.onclick = function () {
           const url = "./api/bandas/ingresarbandas.php";
           const data = new FormData();
 
-          const distancia = document.getElementById("distancia").value;
-          const rangomin = document.getElementById("rangomin").value;
-          const rangomax = document.getElementById("rangomax").value;
+          const distancia = input1.value;
+          const rangomin = input2.value;
+          const rangomax = input3.value;
 
           data.append('distancia',distancia);
           data.append('rangomin',rangomin);
@@ -185,10 +176,6 @@ nuevo.onclick = function () {
         })
         
     modal(formulario);
-
-
-}
-
 }
 function modal(div) {
 var modal = this.document.createElement("div");
@@ -224,5 +211,6 @@ var contenido = document.createElement("div");
 contenido.setAttribute("class","div4")
 caja.appendChild(contenido);
 contenido.appendChild(div)
+}
 }
 
