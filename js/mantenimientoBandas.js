@@ -94,12 +94,11 @@ thead.appendChild(fila_1);
     }
 }
 }
-var buttonanadir = document.getElementById("anadir");
+var buttonanadir = this.document.getElementById("anadir");
 
     buttonanadir.onclick = function (){
     //Creamos los elementos
 
-    let body = document.createElement("body");
     let formulario=document.createElement("form"); 
 
     //ESTOESUNPOCODESEPARACIONTRAMPA
@@ -120,6 +119,9 @@ var buttonanadir = document.getElementById("anadir");
     let label3 = document.createElement("label");
     let input3 = document.createElement("input");
 
+    //atributos de formulario
+    formulario.setAttribute('method', "post");
+    formulario.setAttribute('action', "#");
     //boton
         let botoninsertar=document.createElement("input");
     
@@ -145,9 +147,9 @@ var buttonanadir = document.getElementById("anadir");
         botoninsertar.setAttribute('type', "button");	
         botoninsertar.setAttribute('value', "ingresar");
         botoninsertar.setAttribute("class","button-azul");
+        botoninsertar.setAttribute('onclick', "location.reload()");
         
         //Unimos todo
-        body.appendChild(formulario);
         formulario.appendChild(label1);
         formulario.appendChild(input1);
         formulario.appendChild(espacio1);
@@ -158,6 +160,7 @@ var buttonanadir = document.getElementById("anadir");
         formulario.appendChild(input3);
         formulario.appendChild(espacio3);
         formulario.appendChild(botoninsertar);
+        document.getElementById('formulario').appendChild(formulario);
 
         botoninsertar.addEventListener("click",function(e){
           e.preventDefault();
@@ -175,7 +178,7 @@ var buttonanadir = document.getElementById("anadir");
           fetch(url,{method:'POST',body:data});
         })
         
-    modal(formulario);
+    modal(formulario); 
 }
 function modal(div) {
 var modal = this.document.createElement("div");

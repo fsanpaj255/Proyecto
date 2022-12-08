@@ -9,6 +9,8 @@
 <body>
     <h2 class="h3enunciado">Listado de bandas</h2>
     <button type="button" class="buttonanadir" name="añadir" id="anadir" ><img src="../../../source/mas.png"></button>
+    <div id="formulario">
     <strong id="con"></strong>
+    </div>
 </body>
 </html>
