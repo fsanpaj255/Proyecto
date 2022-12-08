@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
     nuevo.onclick = function () {
         //Creamos los elementos
 
-
+        let body = document.createElement("body");
         let formulario=document.createElement("form"); 
 
         //ESTOESUNPOCODESEPARACIONTRAMPA
@@ -27,11 +27,8 @@ window.addEventListener("load", function () {
         let input3 = document.createElement("input");
 
         //boton
-        let boton=document.createElement("input");
+            let boton=document.createElement("input");
         
-        //Asignar atributos al objeto formulario
-        formulario.setAttribute('method', "post");
-        formulario.setAttribute('action', "#");
 
        
  
@@ -39,26 +36,30 @@ window.addEventListener("load", function () {
             label1.innerHTML = "Distancia";
             input1.setAttribute('type', "text");
             input1.setAttribute('name', "distancia");
+            input1.setAttribute('id', "distancia");
  
             //Atributos  rango minimo
             label2.innerHTML= "Rango mínimo";
-            input2.setAttribute('id', "contrasena");
+            input2.setAttribute('type', "text");
             input2.setAttribute('name', "rangomin");
+            input1.setAttribute('id', "rangomin");
  
             //Atributos  rango maximo
             label3.innerHTML= "Rango máximo";
             input3.setAttribute('type', "text");
             input3.setAttribute('name', "rangomax");
+            input1.setAttribute('id', "rangomax");
         
             ////Asignar atributos al objeto boton
             boton.setAttribute('type', "submit");	
-            boton.setAttribute('value', "Añadir");
+            boton.setAttribute('value', "ingresar");
             boton.setAttribute("class","button-azul");
             //boton.setAttribute('onclick', "alert('Se ha añadido un nuevo bandas')");
  
           
             
             //Unimos todo
+            body.appendChild(formulario);
             formulario.appendChild(label1);
             formulario.appendChild(input1);
             formulario.appendChild(espacio1);
@@ -68,25 +69,22 @@ window.addEventListener("load", function () {
             formulario.appendChild(label3);
             formulario.appendChild(input3);
             formulario.appendChild(espacio3);
-
             formulario.appendChild(boton);
-            document.getElementById('cuerpo').appendChild(formulario);//Agregar el formulario a la etiqueta con el ID		
 
-            boton.addEventListener("click",function(){
-                let xhtml=new XMLHttpRequest();
-                xhtml.open('POST','./api/bandas/ingresarbandas.php',true);
-                xhtml.setRequestHeader("content-type","application/x-www-form-urlencoded")
-                xhtml.onload = function(){
-                    if(xhtml.status == 200){
-                        document.querySelector('yes asi se hace').innerHTML = xhtml.responseText;
-                    }else{
-                        document.querySelector('F').innerHTML = xhtml.responseText;
-                    }
-                }
-                console.log(input1.value);
-                xhtml.send(input1.value,input2.value,input3.value);
-                console.log(xhtml.send);
-              
+            boton.addEventListener("click",function(e){
+              e.preventDefault();
+              const url = "./api/bandas/ingresarbandas.php";
+              const data = new FormData();
+
+              const distancia = document.getElementById("distancia").value;
+              const rangomin = document.getElementById("rangomin").value;
+              const rangomax = document.getElementById("rangomax").value;
+
+              data.append('distancia',distancia);
+              data.append('rangomin',rangomin);
+              data.append('rangomax',rangomax);
+
+              fetch(url,{method:'POST',body:data});
             })
             
         modal(formulario);
