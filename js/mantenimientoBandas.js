@@ -121,7 +121,7 @@ var buttonanadir = document.getElementById("anadir");
     let input3 = document.createElement("input");
 
     //boton
-        let boton=document.createElement("input");
+        let botoninsertar=document.createElement("input");
     
         //Atributos  distancia
         label1.innerHTML = "Distancia";
@@ -142,9 +142,9 @@ var buttonanadir = document.getElementById("anadir");
         input1.setAttribute('id', "rangomax");
     
         ////Asignar atributos al objeto boton
-        boton.setAttribute('type', "submit");	
-        boton.setAttribute('value', "ingresar");
-        boton.setAttribute("class","button-azul");
+        botoninsertar.setAttribute('type', "button");	
+        botoninsertar.setAttribute('value', "ingresar");
+        botoninsertar.setAttribute("class","button-azul");
         
         //Unimos todo
         body.appendChild(formulario);
@@ -157,9 +157,9 @@ var buttonanadir = document.getElementById("anadir");
         formulario.appendChild(label3);
         formulario.appendChild(input3);
         formulario.appendChild(espacio3);
-        formulario.appendChild(boton);
+        formulario.appendChild(botoninsertar);
 
-        boton.addEventListener("click",function(e){
+        botoninsertar.addEventListener("click",function(e){
           e.preventDefault();
           const url = "./api/bandas/ingresarbandas.php";
           const data = new FormData();
