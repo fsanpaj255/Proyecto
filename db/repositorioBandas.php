@@ -60,6 +60,14 @@ function getallBandasArray()
     return $arraybandas;
    }
 
+   function crearapiBandas($json){
+    $datos = json_decode($json,true);
+    $distancia = $datos['distancia'];
+    $rangomin = $datos['rangomin'];
+    $rangomax = $datos['rangomax'];
+    $this->conex->query("INSERT INTO banda VALUES(null,'$distancia', '$rangomin', '$rangomax')");
+   }
+
 //Insertar nuevo banda //ver como se mete el imagen y el localizacion
 function insert($distancia,$rangomin,$rangomax)
 {

@@ -35,17 +35,17 @@ fila_1.appendChild(encabezado_6);
 thead.appendChild(fila_1);
 
     //pedimos el json y el status
-    let xhttp=new XMLHttpRequest();
-    xhttp.open('GET','./api/bandas/getbandas.php',true);
-    xhttp.send();
-    xhttp.onreadystatechange=function(){
+    let ajax=new XMLHttpRequest();
+    ajax.open('GET','./api/bandas/getbandas.php',true);
+    ajax.send();
+    ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200 ){
             //console.log(this.responseText);
             document.getElementById('con').innerHTML=this.responseText;
-    let xhtml=new XMLHttpRequest();
-    xhtml.open('GET','./api/bandas/getbandas.php',true);
-    xhtml.send();
-    xhtml.onreadystatechange=function(){
+    let ajax=new XMLHttpRequest();
+    ajax.open('GET','./api/bandas/getbandas.php',true);
+    ajax.send();
+    ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200){
             console.log(this.responseText);
             let data=JSON.parse(this.responseText);
@@ -162,20 +162,22 @@ var buttonanadir = this.document.getElementById("anadir");
         formulario.appendChild(botoninsertar);
         document.getElementById('formulario').appendChild(formulario);
 
-        botoninsertar.addEventListener("click",function(e){
-          e.preventDefault();
-          const url = "./api/bandas/ingresarbandas.php";
-          const data = new FormData();
+        botoninsertar.addEventListener("click",function(){
+                const newbanda =  {
+                    distancia: input1.value,
+                    rangomin: input2.value,
+                    rangomax: input3.value
+                }
 
-          const distancia = input1.value;
-          const rangomin = input2.value;
-          const rangomax = input3.value;
-
-          data.append('distancia',distancia);
-          data.append('rangomin',rangomin);
-          data.append('rangomax',rangomax);
-
-          fetch(url,{method:'POST',body:data});
+                var ajax;
+                ajax= new XMLHttpRequest();
+                ajax.onreadystatechange=function(){
+                    if(ajax.readyState===4 && ajax.status===200){
+                        ajax.open("POST","./api/bandas/ingresarbandas.php",true);
+                        ajax.setRequestHeader("Content-type","application/json");
+                        ajax.send(JSON.stringify(newbanda));
+                    }
+            }
         })
         
     modal(formulario); 
