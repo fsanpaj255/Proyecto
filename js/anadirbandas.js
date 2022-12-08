@@ -31,7 +31,8 @@ window.addEventListener("load", function () {
         
         //Asignar atributos al objeto formulario
         formulario.setAttribute('method', "post");
-        formulario.setAttribute('action', "./api/bandas/ingresarbandas.php");
+        formulario.setAttribute('action', "#");
+
        
  
             //Atributos  distancia
@@ -55,6 +56,7 @@ window.addEventListener("load", function () {
             boton.setAttribute("class","button-azul");
             //boton.setAttribute('onclick', "alert('Se ha añadido un nuevo bandas')");
  
+          
             
             //Unimos todo
             formulario.appendChild(label1);
@@ -69,6 +71,23 @@ window.addEventListener("load", function () {
 
             formulario.appendChild(boton);
             document.getElementById('cuerpo').appendChild(formulario);//Agregar el formulario a la etiqueta con el ID		
+
+            boton.addEventListener("click",function(){
+                let xhtml=new XMLHttpRequest();
+                xhtml.open('POST','./api/bandas/ingresarbandas.php',true);
+                xhtml.setRequestHeader("content-type","application/x-www-form-urlencoded")
+                xhtml.onload = function(){
+                    if(xhtml.status == 200){
+                        document.querySelector('yes asi se hace').innerHTML = xhtml.responseText;
+                    }else{
+                        document.querySelector('F').innerHTML = xhtml.responseText;
+                    }
+                }
+                console.log(input1.value);
+                xhtml.send(input1.value,input2.value,input3.value);
+                console.log(xhtml.send);
+              
+            })
             
         modal(formulario);
 
