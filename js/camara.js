@@ -1,4 +1,3 @@
-
 window.addEventListener("load", function () {
     const btnFoto = this.document.getElementById("btnFoto");
     //const foto = this.document.getElementById("foto");

@@ -22,17 +22,14 @@
                         <label>Contraseña</label>
                         <input type="password" name="contrasena" required>
                         <label>Foto</label>
-                        <!-- Stream video via webcam -->
                         <div class="video-wrap">
                             <video id="video" playsinline autoplay></video>
                         </div>
-                        <!-- Trigger canvas web API -->
                         <div class="controller">
-                            <button id="btnFoto" class="button-camara">Capture</button>
+                            <button id="btnFoto" class="button-camara"><img src="../../source/camara.png" class="editele"></button>
                         </div>
-                        <!-- Webcam video snapshot -->
                         <canvas id="canvas" width="200" height="200"></canvas>
-                        <input type="file" id="inpFile">
+                        <input type="file" id="inpFile" name="foto">
                         <label>Latitud</label>
                         <input type="text" name="latitud" id="latitudex" required>
                         <label>Longitud</label>

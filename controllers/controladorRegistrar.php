@@ -5,7 +5,7 @@
        $correo = $_POST["correo"];
        $identificador = $_POST["identificador"];
        $contrasena = $_POST["contrasena"];
-       $camara = $_POST["camara"];
+       $camara = $_POST["foto"];
        $latitud = $_POST["latitud"];
        $longitud = $_POST["longitud"];
       
