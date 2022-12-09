@@ -90,17 +90,16 @@ function getallParticipantesArray()
 
 
 //Insertar nuevo participante //ver como se mete el imagen y el localizacion
-function insert($participante)
+function insert($participante,$x,$y)
 {
 $identificador = $participante->getIdentificador();
 $admin = $participante->getAdmin();
 $correo = $participante->getCorreo();
 $contrasena = $participante->getContrasena();
-$localizacion = $participante->getLocalizacion();
 $imagen = $participante->getImagen();
 $nombre = $participante->getNombre();
 
-   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', ST_GeomFromText('$localizacion') , '$imagen', '$nombre')");
+   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', POINT('$x','$y') , '$imagen', '$nombre')");
    return TRUE;
 }
 

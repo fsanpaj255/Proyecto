@@ -89,6 +89,10 @@ thead.appendChild(fila_1);
                 row_2.appendChild(row_2_data_6);
                 tbody.appendChild(row_2);
 
+                aeliminar.addEventListener("click",function(){
+                    eliminarbanda( data[i].id);
+                    location.reload(); 
+             })
             }
         }
     }
@@ -175,10 +179,17 @@ var buttonanadir = this.document.getElementById("anadir");
         
     modal(formulario); 
 }
+function eliminarbanda(id_banda){
+    const ajaxelimi =  new XMLHttpRequest();
+
+    const idBorrarbanda = {
+        idbanda : id_banda
+    };
+    ajaxelimi.open("DELETE","./api/bandas/eliminabandas.php");
+    ajaxelimi.send(JSON.stringify(idBorrarbanda));
+}
 function insertabandas(newbanda){
    
-
-    const formData = new FormData();
     const ajaxinsert = new XMLHttpRequest();
     ajaxinsert.onreadystatechange = function(){
         if (ajaxinsert.readyState == 4 && ajaxinsert.status == 200){

@@ -10,3 +10,15 @@
     font-family: $font-stack;
     border-bottom-style: solid;
   }
+  .button-camara {
+    border: 2px; 
+    width: 50px; 
+    height: 10px;
+    color: white; 
+    border-radius: 25px; 
+    border-color: black;
+    background-image: linear-gradient(to right, #88D9FF 0%, #00ADFF 100%); 
+    font-size: 14px;
+    font-family: $font-stack;
+    border-bottom-style: solid;
+  }

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./css/main.css">
 <script src="../../js/mantenimientoBandas.js"></script>
 <script src="../../js/geolocalizacion.js"></script>
+<script src="../../js/camara.js"></script>
 </footer>
 <body>
 <link rel="stylesheet" href="./css/main.css">
