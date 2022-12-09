@@ -4,4 +4,6 @@ $c = new Conexion();
 $conex = $c->conectabd();
 $rp = new repositorioBandas($conex);
 $id = file_get_contents("php://input");
-$bandas=$rp->delete($id);
+$datos= json_decode($id,true);
+$idaeliminar = $datos["idbanda"];
+$bandas=$rp->delete($idaeliminar);

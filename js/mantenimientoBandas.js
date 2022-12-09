@@ -70,7 +70,17 @@ thead.appendChild(fila_1);
                 imgedit.setAttribute("class","editele")
                 row_2_data_5.appendChild(aeditar);
                 aeditar.appendChild(imgedit);
-                 
+                 //botoneditar
+                aeditar.addEventListener("click",function(){
+                    var fila = this.parentElement.parentElement;
+                    var celdaid = fila.children[0];
+                    var distancia = fila.children[1];
+                    var rangomin = fila.children[2];
+                    var rangomax = fila.children[3];
+                    creaFormulario(celdaid.innerText,distancia.innerText,rangomin.innerText,rangomax.innerText);
+                    
+                    
+             })
                 
                 //Eliminar
                 let row_2_data_6 = document.createElement('td');
@@ -88,10 +98,11 @@ thead.appendChild(fila_1);
                 row_2.appendChild(row_2_data_5);
                 row_2.appendChild(row_2_data_6);
                 tbody.appendChild(row_2);
-
+                //botoneliminar
                 aeliminar.addEventListener("click",function(){
-                    debugger;
-                    eliminarbanda( data[i].id);
+                    var fila = this.parentElement.parentElement;
+                    var celdaid = fila.children[0];
+                    eliminarbanda(celdaid.innerText);
                     location.reload(); 
                     
              })
@@ -103,93 +114,129 @@ thead.appendChild(fila_1);
 var buttonanadir = this.document.getElementById("anadir");
 
     buttonanadir.onclick = function (){
-    //Creamos los elementos
-
-    let formulario=document.createElement("form"); 
-
-    //ESTOESUNPOCODESEPARACIONTRAMPA
-    let espacio1 = document.createElement("br");
-    let espacio2 = document.createElement("br");
-    let espacio3 = document.createElement("br");
-
-    //Distancia
-    let label1 = document.createElement("label");
-    let input1 = document.createElement("input");
-
-     //Rangomin
-     let label2 = document.createElement("label");
-     let input2 = document.createElement("input");
-
-      //Rangomax
-
-    let label3 = document.createElement("label");
-    let input3 = document.createElement("input");
-
-    //atributos de formulario
-    formulario.setAttribute('method', "post");
-    formulario.setAttribute('action', "#");
-    formulario.setAttribute('id','form');
-    //boton
-        let botoninsertar=document.createElement("input");
-    
-        //Atributos  distancia
-        label1.innerHTML = "Distancia";
-        input1.setAttribute('type', "text");
-        input1.setAttribute('name', "distancia");
-        input1.setAttribute('id', "distancia");
-
-        //Atributos  rango minimo
-        label2.innerHTML= "Rango mínimo";
-        input2.setAttribute('type', "text");
-        input2.setAttribute('name', "rangomin");
-        input1.setAttribute('id', "rangomin");
-
-        //Atributos  rango maximo
-        label3.innerHTML= "Rango máximo";
-        input3.setAttribute('type', "text");
-        input3.setAttribute('name', "rangomax");
-        input1.setAttribute('id', "rangomax");
-    
-        ////Asignar atributos al objeto boton
-        botoninsertar.setAttribute('type', "button");	
-        botoninsertar.setAttribute('value', "ingresar");
-        botoninsertar.setAttribute("class","button-azul");
-        botoninsertar.setAttribute('onclick', "location.reload()");
-        
-        //Unimos todo
-        formulario.appendChild(label1);
-        formulario.appendChild(input1);
-        formulario.appendChild(espacio1);
-        formulario.appendChild(label2);
-        formulario.appendChild(input2);
-        formulario.appendChild(espacio2);
-        formulario.appendChild(label3);
-        formulario.appendChild(input3);
-        formulario.appendChild(espacio3);
-        formulario.appendChild(botoninsertar);
-        document.getElementById('formulario').appendChild(formulario);
+        creaFormulario(0,0,0,0);
      
+}
+function creaFormulario(id,distancia,rangomin,rangomax){
+        //Creamos los elementos
 
-        botoninsertar.addEventListener("click",function(){
-                var newbanda =  {
+        let formulario=document.createElement("form"); 
+        formulario.id = 'formulario_'+id;
+
+        //ESTOESUNPOCODESEPARACIONTRAMPA
+        let espacio1 = document.createElement("br");
+        let espacio2 = document.createElement("br");
+        let espacio3 = document.createElement("br");
+    
+        //Distancia
+        let label1 = document.createElement("label");
+        let input1 = document.createElement("input");
+        input1.value = distancia;
+    
+         //Rangomin
+         let label2 = document.createElement("label");
+         let input2 = document.createElement("input");
+         input2.value = rangomin;
+          //Rangomax
+    
+        let label3 = document.createElement("label");
+        let input3 = document.createElement("input");
+        input3.value = rangomax;
+        //atributos de formulario
+        formulario.setAttribute('method', "post");
+        formulario.setAttribute('action', "#");
+        formulario.setAttribute('id','form');
+        //boton
+            let botoninsertar=document.createElement("input");
+        
+            //Atributos  distancia
+            label1.innerHTML = "Distancia";
+            input1.setAttribute('type', "text");
+            input1.setAttribute('name', "distancia");
+            input1.setAttribute('id', "distancia");
+    
+            //Atributos  rango minimo
+            label2.innerHTML= "Rango mínimo";
+            input2.setAttribute('type', "text");
+            input2.setAttribute('name', "rangomin");
+            input1.setAttribute('id', "rangomin");
+    
+            //Atributos  rango maximo
+            label3.innerHTML= "Rango máximo";
+            input3.setAttribute('type', "text");
+            input3.setAttribute('name', "rangomax");
+            input1.setAttribute('id', "rangomax");
+        
+            ////Asignar atributos al objeto boton
+            botoninsertar.setAttribute('type', "button");	
+            botoninsertar.setAttribute('value', "ingresar");
+            botoninsertar.setAttribute("class","button-azul");
+            botoninsertar.setAttribute('onclick', "location.reload()");
+            
+            //Unimos todo
+            formulario.appendChild(label1);
+            formulario.appendChild(input1);
+            formulario.appendChild(espacio1);
+            formulario.appendChild(label2);
+            formulario.appendChild(input2);
+            formulario.appendChild(espacio2);
+            formulario.appendChild(label3);
+            formulario.appendChild(input3);
+            formulario.appendChild(espacio3);
+            formulario.appendChild(botoninsertar);
+            document.getElementById('formulario').appendChild(formulario);
+         
+            if(id = 0){
+            botoninsertar.addEventListener("click",function(){
+                    var newbanda =  {
+                        distancia: input1.value,
+                        rangomin: input2.value,
+                        rangomax: input3.value
+                    }
+                    insertabandas(newbanda);
+            })
+        }else{
+            botoninsertar.addEventListener("click",function(){
+                var editbanda =  {
+                    id:id,
                     distancia: input1.value,
                     rangomin: input2.value,
                     rangomax: input3.value
                 }
-                insertabandas(newbanda);
-        })
+                editarbanda(editbanda);
+
+            })
+        }
+    
+            
+        modal(formulario);
+}
+function editarbanda(editbanda){
+    const ajaxedit  =  new XMLHttpRequest();
+    ajaxedit.onreadystatechange = function(){
+        if (ajaxedit.readyState == 4 && ajaxedit.status == 200){
         
-    modal(formulario); 
+        }
+    }
+    ajaxedit.open("POST","./api/bandas/actualizarbandas.php");
+    ajaxedit.send(JSON.stringify(editbanda));
 }
 function eliminarbanda(id_banda){
     const ajaxelimi =  new XMLHttpRequest();
-
-    const idBorrarbanda = {
+    ajaxelimi.onreadystatechange = function(){
+        if (ajaxelimi.readyState == 4 && ajaxelimi.status == 200){
+        
+        }
+    }
+    //la id que le tengo que pasar a la api es la idband en este caso;
+    var idBorrarbanda = {
         idbanda : id_banda
     };
-    ajaxelimi.open("DELETE","./api/bandas/eliminabandas.php");
+    
+    ajaxelimi.open("POST","./api/bandas/eliminabandas.php");
     ajaxelimi.send(JSON.stringify(idBorrarbanda));
 }
+
 function insertabandas(newbanda){
    
     const ajaxinsert = new XMLHttpRequest();

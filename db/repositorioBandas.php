@@ -76,12 +76,18 @@ function insert($distancia,$rangomin,$rangomax)
 }
 
  //Actualizar un  banda por su id
- function update($banda,$distancia,$rangomin,$rangomax){
+ function update($id,$distancia,$rangomin,$rangomax){
   //getid (que si la tiene la base de datos aunque nosotros la tengamos null)
-  $id = $banda->getId();
     $this->conex->query("UPDATE banda SET distancia='$distancia'rangoMin='$rangomin',rangoMax='$rangomax' WHERE id='$id'");
   }
-  
+  function updateapiBandas($json){
+    $datos = json_decode($json,true);
+    $id = $datos['id'];
+    $distancia = $datos['distancia'];
+    $rangomin = $datos['rangomin'];
+    $rangomax = $datos['rangomax'];
+      $this->conex->query("UPDATE banda SET distancia='$distancia'rangoMin='$rangomin',rangoMax='$rangomax' WHERE id='$id'");
+    }
   //Borrar un banda por su id
   function delete($id){
     $this->conex->query("DELETE FROM banda WHERE id='$id'");
