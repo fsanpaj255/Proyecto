@@ -59,7 +59,7 @@ function getallBandasArray()
     }
     return $arraybandas;
    }
-
+   //PARA EL INSERT DE LA API
    function crearapiBandas($json){
     $datos = json_decode($json,true);
     $distancia = $datos['distancia'];

@@ -52,7 +52,7 @@ if (isset($_GET['menu'])) {
      
     }
     if ($_GET['menu'] == "api") {
-        require_once './api/bandas/getbandas.php';
+        require_once './api/bandas/ingresarbandas.php';
      
     }
 
