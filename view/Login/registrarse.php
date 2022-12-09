@@ -28,7 +28,7 @@
                         <div class="controller">
                             <button id="btnFoto" class="button-camara"><img src="../../source/camara.png" class="editele"></button>
                         </div>
-                        <canvas id="canvas" width="200" height="200"></canvas>
+                        <canvas hidden id="canvas" width="200" height="200"></canvas>
                         <input type="file" id="inpFile" name="foto">
                         <label>Latitud</label>
                         <input type="text" name="latitud" id="latitudex" required>
