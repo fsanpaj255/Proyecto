@@ -64,7 +64,7 @@ thead.appendChild(fila_1);
                 row_2_data_4.innerHTML = data[i].rangoMax;
                 //Editar
                 let row_2_data_5 = document.createElement('td');
-                let aeditar = document.createElement('span');
+                let aeditar = document.createElement('a');
                 let imgedit = document.createElement('img');
                 imgedit.setAttribute("src","./source/editar.png");
                 imgedit.setAttribute("class","editele")
@@ -74,7 +74,7 @@ thead.appendChild(fila_1);
                 
                 //Eliminar
                 let row_2_data_6 = document.createElement('td');
-                let aeliminar = document.createElement('span');
+                let aeliminar = document.createElement('a');
                 let imgeliminar = document.createElement('img');
                 imgeliminar.setAttribute("src","./source/borrarphp.png");
                 imgeliminar.setAttribute("class","editele")
@@ -90,8 +90,10 @@ thead.appendChild(fila_1);
                 tbody.appendChild(row_2);
 
                 aeliminar.addEventListener("click",function(){
+                    debugger;
                     eliminarbanda( data[i].id);
                     location.reload(); 
+                    
              })
             }
         }
