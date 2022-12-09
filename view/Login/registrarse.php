@@ -28,10 +28,11 @@
                         </div>
                         <!-- Trigger canvas web API -->
                         <div class="controller">
-                            <button id="snap" class="button-camara">Capture</button>
+                            <button id="btnFoto" class="button-camara">Capture</button>
                         </div>
                         <!-- Webcam video snapshot -->
                         <canvas id="canvas" width="100" height="100"></canvas>
+                        <input type="file" id="inpFile">
                         <label>Latitud</label>
                         <input type="text" name="latitud" id="latitudex" required>
                         <label>Longitud</label>
