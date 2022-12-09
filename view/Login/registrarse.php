@@ -31,7 +31,7 @@
                             <button id="btnFoto" class="button-camara">Capture</button>
                         </div>
                         <!-- Webcam video snapshot -->
-                        <canvas id="canvas" width="100" height="100"></canvas>
+                        <canvas id="canvas" width="200" height="200"></canvas>
                         <input type="file" id="inpFile">
                         <label>Latitud</label>
                         <input type="text" name="latitud" id="latitudex" required>
