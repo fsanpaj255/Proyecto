@@ -1,10 +1,9 @@
 window.addEventListener("load", function () {
+    //capturamos los elementos
     const btnFoto = this.document.getElementById("btnFoto");
-    //const foto = this.document.getElementById("foto");
     const video = this.document.getElementById("video");
     const input = this.document.getElementById("inpFile");
     video.style.borderRadius = "50%";
-    // video.style.borderColor = "darkorange";
     const canvas = document.getElementById('canvas');
     canvas.style.borderRadius = "50%";
   
@@ -17,16 +16,14 @@ window.addEventListener("load", function () {
     };
   
   
-    // Accedemos a la webcam
+    // Acceder a la camara
     async function init() {
       try {
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
         handleSuccess(stream);
       } catch (e) {
-        // errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
       }
     }
-    // éxito
     function handleSuccess(stream) {
       window.stream = stream;
       video.srcObject = stream;
@@ -34,7 +31,6 @@ window.addEventListener("load", function () {
     }
     init();
   
-    //   El código de captación de cámara dado por Silverio
     btnFoto.addEventListener("click", function (ev) {
       ev.preventDefault();
       video.style.display = "none";
@@ -42,12 +38,7 @@ window.addEventListener("load", function () {
       //foto.style.display = "none";
       var ctx = canvas.getContext('2d');  
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      /*let image_data_url = canvas.toDataURL('image/jpeg');
-  
-      console.log(image_data_url);
-      debugger;
-      localStorage.setItem('picture', image_data_url);
-      input.files[0] = localStorage.getItem('picture'); */
+
       canvas.toBlob((blob)=>{
         const file= new File([blob],"imagen.png");
         const dT=new DataTransfer();
