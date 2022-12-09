@@ -1,5 +1,5 @@
-window.onload = function(){
 
+window.onload = function(){
     //creamos la tabla
     let table = document.createElement('table');
     table.setAttribute("class","styled-table")
@@ -64,7 +64,7 @@ thead.appendChild(fila_1);
                 row_2_data_4.innerHTML = data[i].rangoMax;
                 //Editar
                 let row_2_data_5 = document.createElement('td');
-                let aeditar = document.createElement('a');
+                let aeditar = document.createElement('span');
                 let imgedit = document.createElement('img');
                 imgedit.setAttribute("src","./source/editar.png");
                 imgedit.setAttribute("class","editele")
@@ -74,7 +74,7 @@ thead.appendChild(fila_1);
                 
                 //Eliminar
                 let row_2_data_6 = document.createElement('td');
-                let aeliminar = document.createElement('a');
+                let aeliminar = document.createElement('span');
                 let imgeliminar = document.createElement('img');
                 imgeliminar.setAttribute("src","./source/borrarphp.png");
                 imgeliminar.setAttribute("class","editele")
@@ -122,6 +122,7 @@ var buttonanadir = this.document.getElementById("anadir");
     //atributos de formulario
     formulario.setAttribute('method', "post");
     formulario.setAttribute('action', "#");
+    formulario.setAttribute('id','form');
     //boton
         let botoninsertar=document.createElement("input");
     
@@ -161,26 +162,32 @@ var buttonanadir = this.document.getElementById("anadir");
         formulario.appendChild(espacio3);
         formulario.appendChild(botoninsertar);
         document.getElementById('formulario').appendChild(formulario);
+     
 
         botoninsertar.addEventListener("click",function(){
-                const newbanda =  {
+                var newbanda =  {
                     distancia: input1.value,
                     rangomin: input2.value,
                     rangomax: input3.value
                 }
-
-                var ajax;
-                ajax= new XMLHttpRequest();
-                ajax.onreadystatechange=function(){
-                    if(ajax.readyState===4 && ajax.status===200){
-                        ajax.open("POST","./api/bandas/ingresarbandas.php",true);
-                        ajax.setRequestHeader("Content-type","application/json");
-                        ajax.send(JSON.stringify(newbanda));
-                    }
-            }
+                insertabandas(newbanda);
         })
         
     modal(formulario); 
+}
+function insertabandas(newbanda){
+   
+
+    const formData = new FormData();
+    const ajaxinsert = new XMLHttpRequest();
+    ajaxinsert.onreadystatechange = function(){
+        if (ajaxinsert.readyState == 4 && ajaxinsert.status == 200){
+        
+        }
+    }
+ 
+    ajaxinsert.open("POST","./api/bandas/ingresarbandas.php");
+    ajaxinsert.send(JSON.stringify(newbanda));
 }
 function modal(div) {
 var modal = this.document.createElement("div");
@@ -203,13 +210,13 @@ caja.appendChild(titulo);
 
 var cerrar = document.createElement("span");
 cerrar.innerHTML="X";
-cerrar.setAttribute("class","span1")
-cerrar.onclick=function(){
-    var caja =this.parentElement.parentElement;
+cerrar.setAttribute("class","span1");
+ cerrar.onclick=function(){
+     var caja =this.parentElement.parentElement;
     caja.parentElement.removeChild(caja);
     modal.parentElement.removeChild(modal);
-    location.reload();
-}
+    location.reload();  
+} 
 titulo.appendChild(cerrar);
 
 var contenido = document.createElement("div");
