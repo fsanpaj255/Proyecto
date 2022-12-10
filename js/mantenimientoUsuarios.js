@@ -1,4 +1,3 @@
-
 window.onload = function(){
     //creamos la tabla
     let table = document.createElement('table');
@@ -17,15 +16,24 @@ let fila_1 = document.createElement('tr');
 let encabezado_1 = document.createElement('th');
 encabezado_1.innerHTML = "ID";
 let encabezado_2 = document.createElement('th');
-encabezado_2.innerHTML = "Distancia";
+encabezado_2.innerHTML = "Identificador";
 let encabezado_3 = document.createElement('th');
-encabezado_3.innerHTML = "Rango Mínimo";
+encabezado_3.innerHTML = "Admin";
 let encabezado_4 = document.createElement('th');
-encabezado_4.innerHTML = "Rango Máximo";
+encabezado_4.innerHTML = "Correo";
 let encabezado_5 = document.createElement('th');
-encabezado_5.innerHTML = "Editar";
+encabezado_5.innerHTML = "Contraseña";
 let encabezado_6 = document.createElement('th');
-encabezado_6.innerHTML = "Eliminar";
+encabezado_6.innerHTML = "Localización";
+let encabezado_7 = document.createElement('th');
+encabezado_7.innerHTML = "Imagen";
+let encabezado_8 = document.createElement('th');
+encabezado_8.innerHTML = "Nombre";
+let encabezado_9 = document.createElement('th');
+encabezado_9.innerHTML = "Editar";
+let encabezado_10 = document.createElement('th');
+encabezado_10.innerHTML = "Eliminar";
+
 
 fila_1.appendChild(encabezado_1);
 fila_1.appendChild(encabezado_2);
@@ -33,18 +41,22 @@ fila_1.appendChild(encabezado_3);
 fila_1.appendChild(encabezado_4);
 fila_1.appendChild(encabezado_5);
 fila_1.appendChild(encabezado_6);
+fila_1.appendChild(encabezado_7);
+fila_1.appendChild(encabezado_8);
+fila_1.appendChild(encabezado_9);
+fila_1.appendChild(encabezado_10);
 thead.appendChild(fila_1);
 
     //pedimos el json y el status
     let ajax=new XMLHttpRequest();
-    ajax.open('GET','./api/bandas/getbandas.php',true);
+    ajax.open('GET','./api/participantes/getparticipantes.php',true);
     ajax.send();
     ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200 ){
             //console.log(this.responseText);
-            document.getElementById('con').innerHTML=this.responseText;
+            document.getElementById('conuser').innerHTML=this.responseText;
     let ajax=new XMLHttpRequest();
-    ajax.open('GET','./api/bandas/getbandas.php',true);
+    ajax.open('GET','./api/participantes/getparticipantes.php',true);
     ajax.send();
     ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200){
@@ -58,38 +70,50 @@ thead.appendChild(fila_1);
                 let row_2_data_1 = document.createElement('td');
                 row_2_data_1.innerHTML = data[i].id;
                 let row_2_data_2 = document.createElement('td');
-                row_2_data_2.innerHTML = data[i].distancia;
+                row_2_data_2.innerHTML = data[i].identificador;
                 let row_2_data_3 = document.createElement('td');
-                row_2_data_3.innerHTML = data[i].rangoMin;
+                row_2_data_3.innerHTML = data[i].admin;
                 let row_2_data_4 = document.createElement('td');
-                row_2_data_4.innerHTML = data[i].rangoMax;
-                //Editar
+                row_2_data_4.innerHTML = data[i].correo;
                 let row_2_data_5 = document.createElement('td');
+                row_2_data_5.innerHTML = data[i].contrasena;
+                let row_2_data_6 = document.createElement('td');
+                row_2_data_6.innerHTML = data[i].localizacion;
+                let row_2_data_7 = document.createElement('td');
+                row_2_data_7.innerHTML = data[i].imagen;
+                let row_2_data_8 = document.createElement('td');
+                row_2_data_8.innerHTML = data[i].nombre;
+                //Editar
+                let row_2_data_9 = document.createElement('td');
                 let aeditar = document.createElement('a');
                 let imgedit = document.createElement('img');
                 imgedit.setAttribute("src","./source/editar.png");
                 imgedit.setAttribute("class","editele")
-                row_2_data_5.appendChild(aeditar);
+                row_2_data_9.appendChild(aeditar);
                 aeditar.appendChild(imgedit);
                  //botoneditar
                 aeditar.addEventListener("click",function(){
                     var fila = this.parentElement.parentElement;
                     var celdaid = fila.children[0];
-                    var distancia = fila.children[1];
-                    var rangomin = fila.children[2];
-                    var rangomax = fila.children[3];
-                    creaFormulario(celdaid.innerText,distancia.innerText,rangomin.innerText,rangomax.innerText);
+                    var identificador = fila.children[1];
+                    var admin = fila.children[2];
+                    var correo = fila.children[3];
+                    var contrasena = fila.children[4];
+                    var localizacion = fila.children[5];
+                    var imagen = fila.children[6];
+                    var nombre = fila.children[7];
+                    creaFormulario(celdaid.innerText,identificador.innerText,admin.innerText,correo.innerText,contrasena.innerText,localizacion.innerText,imagen.innerText,nombre.innerText);
                     
                     
              })
                 
                 //Eliminar
-                let row_2_data_6 = document.createElement('td');
+                let row_2_data_10 = document.createElement('td');
                 let aeliminar = document.createElement('a');
                 let imgeliminar = document.createElement('img');
                 imgeliminar.setAttribute("src","./source/borrarphp.png");
                 imgeliminar.setAttribute("class","editele")
-                row_2_data_6.appendChild(aeliminar);
+                row_2_data_10.appendChild(aeliminar);
                 aeliminar.appendChild(imgeliminar)
 
                 row_2.appendChild(row_2_data_1);
@@ -98,6 +122,10 @@ thead.appendChild(fila_1);
                 row_2.appendChild(row_2_data_4);
                 row_2.appendChild(row_2_data_5);
                 row_2.appendChild(row_2_data_6);
+                row_2.appendChild(row_2_data_7);
+                row_2.appendChild(row_2_data_8);
+                row_2.appendChild(row_2_data_9);
+                row_2.appendChild(row_2_data_10);
                 tbody.appendChild(row_2);
                 //botoneliminar
                 aeliminar.addEventListener("click",function(){
@@ -112,13 +140,13 @@ thead.appendChild(fila_1);
     }
 }
 }
-var buttonanadir = this.document.getElementById("anadir");
+var buttonanadir = this.document.getElementById("anadirusuarios");
 
     buttonanadir.onclick = function (){
-        creaFormulario(0,0,0,0);
+        creaFormulario(0,0,0,0,0,0,0,0);
      
 }
-function creaFormulario(id,distancia,rangomin,rangomax){
+function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,imagen,nombre){
         //Creamos los elementos
 
         let formulario=document.createElement("form"); 
@@ -128,6 +156,7 @@ function creaFormulario(id,distancia,rangomin,rangomax){
         let espacio1 = document.createElement("br");
         let espacio2 = document.createElement("br");
         let espacio3 = document.createElement("br");
+        //me he quedado cambiando codigo aqui
     
         //Distancia
         let label1 = document.createElement("label");
@@ -185,7 +214,7 @@ function creaFormulario(id,distancia,rangomin,rangomax){
             formulario.appendChild(input3);
             formulario.appendChild(espacio3);
             formulario.appendChild(botoninsertar);
-            document.getElementById('formulario').appendChild(formulario);
+            document.getElementById('formulariouser').appendChild(formulario);
          
            if(id == 0){
             botoninsertar.addEventListener("click",function(){
@@ -286,4 +315,5 @@ caja.appendChild(contenido);
 contenido.appendChild(div)
 }
 }
+
 

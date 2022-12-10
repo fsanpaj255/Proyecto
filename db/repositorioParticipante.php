@@ -86,9 +86,6 @@ function getallParticipantesArray()
     return $arrayparticipantes;
    }
 
-    
-
-
 //Insertar nuevo participante //ver como se mete el imagen y el localizacion
 function insert($participante,$x,$y)
 {

@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-<input type="button" value="Generar listado" onclick="addTable()">
-    <div id="listadoparticipantes">
+    <h2 class="h3enunciado">Listado de Usuarios/Participantes</h2>
+    <button type="button" class="buttonanadir" name="añadir" id="anadirusuarios" ><img src="../../../source/mas.png"></button>
+    <div id=cuerpouser>
+        <div id="formulariouser">
+            <strong id="conuser"></strong>
+        </div>
     </div>
 </body>
 </html>
