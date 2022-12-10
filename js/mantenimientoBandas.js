@@ -10,7 +10,7 @@ window.onload = function(){
     table.appendChild(tbody);
      //anadimos la tabla a php
 
-    document.getElementById('cuerpo').appendChild(table);
+    document.getElementById('cuerpobandas').appendChild(table);
 
     // Anadimos los nombres de la primera fila de la tabla
 let fila_1 = document.createElement('tr');
