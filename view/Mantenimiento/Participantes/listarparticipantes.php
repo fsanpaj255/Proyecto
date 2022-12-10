@@ -11,8 +11,8 @@
     <button type="button" class="buttonanadir" name="añadir" id="anadirusuarios" ><img src="../../../source/mas.png"></button>
     <div id=cuerpousuarios>
         <div id="formulariouser">
-            <strong id="conuser"></strong>
-        </div>
+        <strong id="conusuarios"></strong>
+    </div>
     </div>
 </body>
 </html>

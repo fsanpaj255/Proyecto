@@ -12,7 +12,7 @@
     <div id=cuerpobandas>
         <div id="formulario">
         <strong id="con"></strong>
-        </div>
+    </div>
     </div>
 </body>
 </html>

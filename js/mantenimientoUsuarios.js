@@ -54,7 +54,7 @@ thead.appendChild(fila_1);
     ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200 ){
             //console.log(this.responseText);
-            document.getElementById('conuser').innerHTML=this.responseText;
+            document.getElementById('conusuarios').innerHTML=this.responseText;
     let ajax=new XMLHttpRequest();
     ajax.open('GET','./api/participantes/getparticipantes.php',true);
     ajax.send();
