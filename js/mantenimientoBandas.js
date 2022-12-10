@@ -186,7 +186,7 @@ function creaFormulario(id,distancia,rangomin,rangomax){
             formulario.appendChild(botoninsertar);
             document.getElementById('formulario').appendChild(formulario);
          
-            if(id = 0){
+           // if(id = 0){
             botoninsertar.addEventListener("click",function(){
                     var newbanda =  {
                         distancia: input1.value,
@@ -195,7 +195,7 @@ function creaFormulario(id,distancia,rangomin,rangomax){
                     }
                     insertabandas(newbanda);
             })
-        }else{
+      //  }else{
             botoninsertar.addEventListener("click",function(){
                 var editbanda =  {
                     id:id,
@@ -206,7 +206,7 @@ function creaFormulario(id,distancia,rangomin,rangomax){
                 editarbanda(editbanda);
 
             })
-        }
+      //  }
     
             
         modal(formulario);
