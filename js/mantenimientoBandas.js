@@ -2,7 +2,7 @@
 window.onload = function(){
     //creamos la tabla
     let table = document.createElement('table');
-    table.setAttribute("class","styled-table")
+    table.setAttribute("class","styled-table");
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
 
@@ -72,7 +72,6 @@ thead.appendChild(fila_1);
                 aeditar.appendChild(imgedit);
                  //botoneditar
                 aeditar.addEventListener("click",function(){
-                    debugger;
                     var fila = this.parentElement.parentElement;
                     var celdaid = fila.children[0];
                     var distancia = fila.children[1];
@@ -101,7 +100,6 @@ thead.appendChild(fila_1);
                 tbody.appendChild(row_2);
                 //botoneliminar
                 aeliminar.addEventListener("click",function(){
-                    debugger;
                     var fila = this.parentElement.parentElement;
                     var celdaid = fila.children[0];
                     eliminarbanda(celdaid.innerText);
@@ -116,7 +114,6 @@ thead.appendChild(fila_1);
 var buttonanadir = this.document.getElementById("anadir");
 
     buttonanadir.onclick = function (){
-        debugger;
         creaFormulario(0,0,0,0);
      
 }
@@ -190,7 +187,6 @@ function creaFormulario(id,distancia,rangomin,rangomax){
             document.getElementById('formulario').appendChild(formulario);
          
            if(id == 0){
-            debugger;
             botoninsertar.addEventListener("click",function(){
                     var newbanda =  {
                         distancia: input1.value,
@@ -200,10 +196,9 @@ function creaFormulario(id,distancia,rangomin,rangomax){
                     insertabandas(newbanda);
             })
         }else{
-            debugger;
             botoninsertar.addEventListener("click",function(){
                 var editbanda =  {
-                    id:celdaid.innerHTML,
+                    id:id,
                     distancia: input1.value,
                     rangomin: input2.value,
                     rangomax: input3.value
@@ -217,16 +212,14 @@ function creaFormulario(id,distancia,rangomin,rangomax){
         modal(formulario);
 }
 function editarbanda(editbanda){
-    debugger;
     const ajaxedit  =  new XMLHttpRequest();
     ajaxedit.onreadystatechange = function(){
         if (ajaxedit.readyState == 4 && ajaxedit.status == 200){
         
         }
     }
-    ajaxedit.open("UPDATE","./api/bandas/actualizarbandas.php");
+    ajaxedit.open("POST","./api/bandas/actualizarbandas.php");
     ajaxedit.send(JSON.stringify(editbanda));
-    debugger;
 }
 function eliminarbanda(id_banda){
     const ajaxelimi =  new XMLHttpRequest();
@@ -245,7 +238,6 @@ function eliminarbanda(id_banda){
 }
 
 function insertabandas(newbanda){
-    debugger;
    
     const ajaxinsert = new XMLHttpRequest();
     ajaxinsert.onreadystatechange = function(){

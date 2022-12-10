@@ -86,7 +86,7 @@ function insert($distancia,$rangomin,$rangomax)
     $distancia = $datos['distancia'];
     $rangomin = $datos['rangomin'];
     $rangomax = $datos['rangomax'];
-      $this->conex->query("UPDATE banda SET distancia='$distancia'rangoMin='$rangomin',rangoMax='$rangomax' WHERE id='$id'");
+      $this->conex->query("UPDATE banda SET distancia='$distancia',rangoMin='$rangomin',rangoMax='$rangomax' WHERE id='$id'");
     }
   //Borrar un banda por su id
   function delete($id){
