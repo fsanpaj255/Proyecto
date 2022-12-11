@@ -319,7 +319,7 @@ function editarbanda(editusuario){
         
         }
     }
-    ajaxedit.open("POST","./api/bandas/actualizarbandas.php");
+    ajaxedit.open("POST","./api/bandas/actualizarparticipantes.php");
     ajaxedit.send(JSON.stringify(editusuario));
 }
 function eliminarbanda(id_usuario){
@@ -331,10 +331,10 @@ function eliminarbanda(id_usuario){
     }
     //la id que le tengo que pasar a la api es la idband en este caso;
     var idBorrarbanda = {
-        idbanda : id_usuario
+        idusuario : id_usuario
     };
     
-    ajaxelimi.open("POST","./api/bandas/eliminabandas.php");
+    ajaxelimi.open("POST","./api/participantes/eliminarparticipantes.php");
     ajaxelimi.send(JSON.stringify(idBorrarbanda));
 }
 
@@ -347,7 +347,7 @@ function insertabandas(newusuario){
         }
     }
  
-    ajaxinsert.open("POST","./api/bandas/ingresarbandas.php");
+    ajaxinsert.open("POST","./api/participantes/ingresarparticipantes.php");
     ajaxinsert.send(JSON.stringify(newusuario));
 }
 function modal(div) {
@@ -366,7 +366,7 @@ document.body.appendChild(caja);
 
 var titulo = document.createElement("div");
 titulo.setAttribute("class","div3");
-titulo.innerHTML="Nueva Banda";
+titulo.innerHTML="Nuevo usuario";
 caja.appendChild(titulo);
 
 var cerrar = document.createElement("span");

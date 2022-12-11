@@ -64,6 +64,8 @@ function usuario($correo,$contrasena){
     return $listadoparticipantes;
 }
 
+
+
 //esto la necesito para usar mi info en el json encode sin que sean publicas las propiedades de mis objetos
 function getallParticipantesArray()
 {
@@ -99,6 +101,20 @@ $nombre = $participante->getNombre();
    $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', POINT('$x','$y') , '$imagen', '$nombre')");
    return TRUE;
 }
+
+ //PARA EL INSERT DE LA API
+ function crearapiParticipante($json){
+  $datos = json_decode($json,true);
+  $identificador = $datos['identificador'];
+  $admin = $datos['admin'];
+  $correo = $datos['correo'];
+  $contrasena = $datos['contraseña'];
+  $localizacion = $datos['localizacion'];
+  $imagen = $datos['imagen'];
+  $nombre = $datos['nombre'];
+
+  $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', '$localizacion', '$imagen', '$imagen', '$nombre')");
+ }
 
  //Actualizar un  participante por su id
  function update($participante,$identificador,$admin,$correo,$contrasena,$localizacion,$imagen,$nombre){
