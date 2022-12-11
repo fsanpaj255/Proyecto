@@ -160,13 +160,13 @@ function creaFormulario(id,distancia,rangomin,rangomax){
             label2.innerHTML= "Rango mínimo";
             input2.setAttribute('type', "text");
             input2.setAttribute('name', "rangomin");
-            input1.setAttribute('id', "rangomin");
+            input2.setAttribute('id', "rangomin");
     
             //Atributos  rango maximo
             label3.innerHTML= "Rango máximo";
             input3.setAttribute('type', "text");
             input3.setAttribute('name', "rangomax");
-            input1.setAttribute('id', "rangomax");
+            input3.setAttribute('id', "rangomax");
         
             ////Asignar atributos al objeto boton
             botoninsertar.setAttribute('type', "button");	

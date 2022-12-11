@@ -53,17 +53,13 @@ thead.appendChild(fila_1);
     ajax.send();
     ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200 ){
-            //console.log(this.responseText);
-            document.getElementById('conusuarios').innerHTML=this.responseText;
     let ajax=new XMLHttpRequest();
     ajax.open('GET','./api/participantes/getparticipantes.php',true);
     ajax.send();
     ajax.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200){
-            console.log(this.responseText);
             let data=JSON.parse(this.responseText);
-            //console.log(data);
-            con.innerHTML='';
+
             for(var i=0;i<data.length;i++){
 
                 let row_2 = document.createElement('tr');
@@ -143,7 +139,7 @@ thead.appendChild(fila_1);
 var buttonanadir = this.document.getElementById("anadirusuarios");
 
     buttonanadir.onclick = function (){
-        creaFormulario(0,0,0,0,0,0,0,0);
+        creaFormulario(0,0,0,0,0,0,0);
      
 }
 function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,imagen,nombre){
@@ -156,22 +152,45 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
         let espacio1 = document.createElement("br");
         let espacio2 = document.createElement("br");
         let espacio3 = document.createElement("br");
+        let espacio4 = document.createElement("br");
+        let espacio5 = document.createElement("br");
+        let espacio6 = document.createElement("br");
+        let espacio7 = document.createElement("br");
         //me he quedado cambiando codigo aqui
     
-        //Distancia
+        //identificador
         let label1 = document.createElement("label");
         let input1 = document.createElement("input");
-        input1.value = distancia;
+        input1.value = identificador;
     
-         //Rangomin
+         //admin
          let label2 = document.createElement("label");
          let input2 = document.createElement("input");
-         input2.value = rangomin;
-          //Rangomax
+         input2.value = admin;
+         
+         //correo
     
         let label3 = document.createElement("label");
         let input3 = document.createElement("input");
-        input3.value = rangomax;
+        input3.value = correo;
+
+        let label4 = document.createElement("label");
+        let input4 = document.createElement("input");
+        input4.value = contrasena;
+
+        let label5 = document.createElement("label");
+        let input5 = document.createElement("input");
+        input5.value = localizacion;
+
+        let label6 = document.createElement("label");
+        let input6 = document.createElement("input");
+        input6.value = imagen;
+
+        let label7 = document.createElement("label");
+        let input7 = document.createElement("input");
+        input7.value = nombre;
+
+
         //atributos de formulario
         formulario.setAttribute('method', "post");
         formulario.setAttribute('action', "#");
@@ -179,23 +198,47 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
         //boton
             let botoninsertar=document.createElement("input");
         
-            //Atributos  distancia
-            label1.innerHTML = "Distancia";
+            //Atributos  identificador
+            label1.innerHTML = "Identificador";
             input1.setAttribute('type', "text");
-            input1.setAttribute('name', "distancia");
-            input1.setAttribute('id', "distancia");
+            input1.setAttribute('name', "identificador");
+            input1.setAttribute('id', "identificador");
     
-            //Atributos  rango minimo
-            label2.innerHTML= "Rango mínimo";
+            //Atributos  admin
+            label2.innerHTML= "Admin";
             input2.setAttribute('type', "text");
-            input2.setAttribute('name', "rangomin");
-            input1.setAttribute('id', "rangomin");
+            input2.setAttribute('name', "admin");
+            input2.setAttribute('id', "admin");
     
-            //Atributos  rango maximo
-            label3.innerHTML= "Rango máximo";
+            //Atributos  correo
+            label3.innerHTML= "Correo";
             input3.setAttribute('type', "text");
-            input3.setAttribute('name', "rangomax");
-            input1.setAttribute('id', "rangomax");
+            input3.setAttribute('name', "correo");
+            input3.setAttribute('id', "correo");
+
+            //Atributos  contrasena
+            label4.innerHTML= "Contraseña";
+            input4.setAttribute('type', "text");
+            input4.setAttribute('name', "contrasena");
+            input4.setAttribute('id', "contrasena");
+
+            //Atributos  localizacion
+            label5.innerHTML= "Localización";
+            input5.setAttribute('type', "text");
+            input5.setAttribute('name', "localizacion");
+            input5.setAttribute('id', "localizacion");
+
+            //Atributos  imagen
+            label6.innerHTML= "Imagen";
+            input6.setAttribute('type', "text");
+            input6.setAttribute('name', "imagen");
+            input6.setAttribute('id', "imagen");
+
+            //Atributos  nombre
+            label7.innerHTML= "Nombre";
+            input7.setAttribute('type', "text");
+            input7.setAttribute('name', "nombre");
+            input7.setAttribute('id', "nombre");
         
             ////Asignar atributos al objeto boton
             botoninsertar.setAttribute('type', "button");	
@@ -207,33 +250,61 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             formulario.appendChild(label1);
             formulario.appendChild(input1);
             formulario.appendChild(espacio1);
+
             formulario.appendChild(label2);
             formulario.appendChild(input2);
             formulario.appendChild(espacio2);
+
             formulario.appendChild(label3);
             formulario.appendChild(input3);
             formulario.appendChild(espacio3);
+
+            formulario.appendChild(label4);
+            formulario.appendChild(input4);
+            formulario.appendChild(espacio4);
+
+            formulario.appendChild(label5);
+            formulario.appendChild(input5);
+            formulario.appendChild(espacio5);
+
+            formulario.appendChild(label6);
+            formulario.appendChild(input6);
+            formulario.appendChild(espacio6);
+
+            formulario.appendChild(label7);
+            formulario.appendChild(input7);
+            formulario.appendChild(espacio7);
+
             formulario.appendChild(botoninsertar);
             document.getElementById('formulariouser').appendChild(formulario);
          
            if(id == 0){
             botoninsertar.addEventListener("click",function(){
-                    var newbanda =  {
-                        distancia: input1.value,
-                        rangomin: input2.value,
-                        rangomax: input3.value
+                    var newusuario =  {
+                        identificador: input1.value,
+                        admin: input2.value,
+                        correo: input3.value,
+                        contrasena: input4.value,
+                        localizacion: input5.value,
+                        imagen: input6.value,
+                        nombre: input7.value
                     }
-                    insertabandas(newbanda);
+                    insertabandas(newusuario);
             })
         }else{
             botoninsertar.addEventListener("click",function(){
-                var editbanda =  {
+                var editusuario =  {
                     id:id,
-                    distancia: input1.value,
-                    rangomin: input2.value,
-                    rangomax: input3.value
+                    identificador: input1.value,
+                    admin: input2.value,
+                    correo: input3.value,
+                    contrasena: input4.value,
+                    localizacion: input5.value,
+                    imagen: input6.value,
+                    nombre: input7.value
+
                 }
-                editarbanda(editbanda);
+                editarbanda(editusuario);
 
             })
         }
@@ -241,7 +312,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             
         modal(formulario);
 }
-function editarbanda(editbanda){
+function editarbanda(editusuario){
     const ajaxedit  =  new XMLHttpRequest();
     ajaxedit.onreadystatechange = function(){
         if (ajaxedit.readyState == 4 && ajaxedit.status == 200){
@@ -249,9 +320,9 @@ function editarbanda(editbanda){
         }
     }
     ajaxedit.open("POST","./api/bandas/actualizarbandas.php");
-    ajaxedit.send(JSON.stringify(editbanda));
+    ajaxedit.send(JSON.stringify(editusuario));
 }
-function eliminarbanda(id_banda){
+function eliminarbanda(id_usuario){
     const ajaxelimi =  new XMLHttpRequest();
     ajaxelimi.onreadystatechange = function(){
         if (ajaxelimi.readyState == 4 && ajaxelimi.status == 200){
@@ -260,14 +331,14 @@ function eliminarbanda(id_banda){
     }
     //la id que le tengo que pasar a la api es la idband en este caso;
     var idBorrarbanda = {
-        idbanda : id_banda
+        idbanda : id_usuario
     };
     
     ajaxelimi.open("POST","./api/bandas/eliminabandas.php");
     ajaxelimi.send(JSON.stringify(idBorrarbanda));
 }
 
-function insertabandas(newbanda){
+function insertabandas(newusuario){
    
     const ajaxinsert = new XMLHttpRequest();
     ajaxinsert.onreadystatechange = function(){
@@ -277,7 +348,7 @@ function insertabandas(newbanda){
     }
  
     ajaxinsert.open("POST","./api/bandas/ingresarbandas.php");
-    ajaxinsert.send(JSON.stringify(newbanda));
+    ajaxinsert.send(JSON.stringify(newusuario));
 }
 function modal(div) {
 var modal = this.document.createElement("div");

@@ -77,7 +77,7 @@ function getallParticipantesArray()
       'admin' => $datos['admin'],
       'correo' => $datos['correo'],
       'contraseña' => $datos['contraseña'],
-      'localizacion' => $datos['localizacion'],
+      'localizacion' => "",
       'imagen' => $datos['imagen'],
       'nombre' => $datos['nombre']
     );
