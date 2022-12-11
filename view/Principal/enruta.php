@@ -38,6 +38,27 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/concursos/editarconcursos.php';
      
     }
+    if ($_GET['menu'] == "listadomodos") {
+        require_once './view/Mantenimiento/Modos/listadomodos.php';
+     
+    }
+   
+    if ($_GET['menu'] == "eliminamodos") {
+        require_once './view/Mantenimiento/Modos/eliminarmodos.php';
+     
+    }
+    if ($_GET['menu'] == "editarmodos") {
+        require_once './view/Mantenimiento/Modos/editarmodos.php';
+     
+    }
+    if ($_GET['menu'] == "procesaeditajemodo") {
+        require_once './view/Mantenimiento/Modos/procesaeditajemodo.php';
+     
+    }
+    if ($_GET['menu'] == "insertamodos") {
+        require_once './view/Mantenimiento/Modos/insertamodos.php';
+     
+    }
     if ($_GET['menu'] == "procesareditar") {
         require_once './view/Mantenimiento/concursos/procesaeditaje.php';
      

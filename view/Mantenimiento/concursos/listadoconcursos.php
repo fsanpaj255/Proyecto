@@ -82,8 +82,8 @@
 					<td><input type="file" name="cartel"></td>
 				</tr>
 				<tr>
-					<td><input type="reset" value="LIMPIAR"></td>
-					<td><input type="submit" value="AÑADIR"></td>
+					<td><input type="reset" value="LIMPIAR" class="button-azul"></td>
+					<td><input type="submit" value="AÑADIR" class="button-azul"></td>
 				</tr>
 			</table>
 		</form>

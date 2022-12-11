@@ -116,6 +116,18 @@ $nombre = $participante->getNombre();
   $this->conex->query("INSERT INTO participante VALUES(null,'$identificador', '$admin', '$correo', '$contrasena', '$localizacion', '$imagen', '$imagen', '$nombre')");
  }
 
+ function updateapiParticipante($json){
+  $datos = json_decode($json,true);
+  $id = $datos['id'];
+  $identificador = $datos['identificador'];
+  $admin = $datos['admin'];
+  $correo = $datos['correo'];
+  $contrasena = $datos['contraseña'];
+  $localizacion = $datos['localizacion'];
+  $imagen = $datos['imagen'];
+  $nombre = $datos['nombre'];
+    $this->conex->query("UPDATE participante SET identificador='$identificador'admin='$admin',correo='$correo',contrasena='$contrasena',loclizacion='$localizacion',imagen='$imagen',nombre='$nombre' WHERE id='$id'");
+  }
  //Actualizar un  participante por su id
  function update($participante,$identificador,$admin,$correo,$contrasena,$localizacion,$imagen,$nombre){
   //getid (que si la tiene la base de datos aunque nosotros la tengamos null)

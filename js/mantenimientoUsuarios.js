@@ -319,7 +319,7 @@ function editarbanda(editusuario){
         
         }
     }
-    ajaxedit.open("POST","./api/bandas/actualizarparticipantes.php");
+    ajaxedit.open("POST","./api/participantes/actualizarparticipantes.php");
     ajaxedit.send(JSON.stringify(editusuario));
 }
 function eliminarbanda(id_usuario){
