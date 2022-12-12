@@ -5,6 +5,21 @@ class Participacion {
     private $concurso_id;
     private $participante_id;
    
+    public function ingresaParticipacion($id,$rol,$concurso,$participacion)
+    {
+        $this->setId($id);
+        $this->setJuez($rol);
+        $this->setConcursoId($concurso);
+        $this->setParticipanteId($participacion);
+    }
+    
+    public function ingresParticipacionArray($participacion)
+    {
+        $this->setId($participacion['id']);
+        $this->setJuez($participacion['rol']);
+        $this->setConcursoId($participacion['concurso']);
+        $this->setParticipanteId($participacion['participacion']);
+    }
 
     /**
      * Get the value of id
