@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-?>
 <section class="section-products">
 		<div class="container">
 				<div class="row justify-content-center text-center">
@@ -19,6 +17,7 @@
 								</div>
 						</div>
 				</div>
+			<?php	if (!isset($_SESSION['rol'])){ ?>
 				<div class="row">
 						<!-- Single Product -->
 						<div class="col-md-6 col-lg-4 col-xl-3">
@@ -60,6 +59,61 @@
 								</div>
 								</div>
 						</div>
+						<?php     
+						 }else{
+							if ($_SESSION['rol'] == 1){ 
+							$c = new Conexion;
+							$conex = $c->conectabd();
+							$rpconcursos = new repositorioConcurso($conex);
+							$concursos = $rpconcursos->getallConcursos();
+							foreach($concursos as $concurso){ ?>
+
+								<div class="row">
+									<!-- Single Product -->
+									<div class="col-md-6 col-lg-4 col-xl-3">
+											<div id="product-1" class="single-product">
+													<div class="part-1">
+															<ul>
+																	<li><a href="?menu=editarconcurso&id=<?php echo $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Editar!</a></li>
+															</ul>
+													</div>
+													<div class="part-2">
+															<h3 class="h3enunciado">Concurso <?php echo $concurso->getNombre(); ?></h3>
+															<h3 class="textofecha">Fecha de inicio: <?php echo $concurso->getFIni(); ?></h3> <h3 class="textofecha">Fecha de finalización: <?php echo $concurso->getFFin(); ?></h3>
+													</div>
+											</div>
+									</div>
+								</div>
+						<?php 
+							}
+   
+						}else{ 
+							$c = new Conexion;
+							$conex = $c->conectabd();
+							$rpconcursos = new repositorioConcurso($conex);
+							$concursos = $rpconcursos->getallConcursos();
+							foreach($concursos as $concurso){ ?>
+
+<div class="row">
+						<!-- Single Product -->
+						<div class="col-md-6 col-lg-4 col-xl-3">
+								<div id="product-1" class="single-product">
+										<div class="part-1">
+												<ul>
+														<li><a href="?menu=inscripcion&=<?php $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Participar!</a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+												<h3 class="product-title">Concurso <?php echo $concurso->getNombre(); ?></h3>
+												<h3>Fecha de inicio: <?php $concurso->getFIni(); ?></h3> <h3>Fecha de finalización: <?php $concurso->getFFin(); ?></h3>
+										</div>
+								</div>
+						</div>
+						<?php } 
+						}
+					}
+				?>
+
 				</div>
 		</div>
 </section>
