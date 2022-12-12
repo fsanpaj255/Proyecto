@@ -266,7 +266,7 @@ document.body.appendChild(caja);
 
 var titulo = document.createElement("div");
 titulo.setAttribute("class","div3");
-titulo.innerHTML="Nueva Banda";
+titulo.innerHTML="Nuevo Usuario";
 caja.appendChild(titulo);
 
 var cerrar = document.createElement("span");

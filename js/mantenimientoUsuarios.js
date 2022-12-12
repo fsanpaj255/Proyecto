@@ -139,7 +139,7 @@ thead.appendChild(fila_1);
 var buttonanadir = this.document.getElementById("anadirusuarios");
 
     buttonanadir.onclick = function (){
-        creaFormulario(0,0,0,0,0,0,0);
+        creaFormulario(0,0,0,0,0,0,0,0);
      
 }
 function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,imagen,nombre){
@@ -244,7 +244,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             botoninsertar.setAttribute('type', "button");	
             botoninsertar.setAttribute('value', "ingresar");
             botoninsertar.setAttribute("class","button-azul");
-            botoninsertar.setAttribute('onclick', "location.reload()");
+            //botoninsertar.setAttribute('onclick', "location.reload()");
             
             //Unimos todo
             formulario.appendChild(label1);
@@ -289,7 +289,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
                         imagen: input6.value,
                         nombre: input7.value
                     }
-                    insertabandas(newusuario);
+                    insertausuarios(newusuario);
             })
         }else{
             botoninsertar.addEventListener("click",function(){
@@ -304,7 +304,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
                     nombre: input7.value
 
                 }
-                editarbanda(editusuario);
+                editarusuario(editusuario);
 
             })
         }
@@ -312,7 +312,8 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             
         modal(formulario);
 }
-function editarbanda(editusuario){
+function editarusuario(editusuario){
+    debugger;
     const ajaxedit  =  new XMLHttpRequest();
     ajaxedit.onreadystatechange = function(){
         if (ajaxedit.readyState == 4 && ajaxedit.status == 200){
@@ -338,17 +339,18 @@ function eliminarbanda(id_usuario){
     ajaxelimi.send(JSON.stringify(idBorrarbanda));
 }
 
-function insertabandas(newusuario){
-   
+function insertausuarios(newusuario){
+    debugger;
     const ajaxinsert = new XMLHttpRequest();
     ajaxinsert.onreadystatechange = function(){
         if (ajaxinsert.readyState == 4 && ajaxinsert.status == 200){
         
         }
     }
- 
+    
     ajaxinsert.open("POST","./api/participantes/ingresarparticipantes.php");
     ajaxinsert.send(JSON.stringify(newusuario));
+    debugger;
 }
 function modal(div) {
 var modal = this.document.createElement("div");
@@ -381,7 +383,7 @@ cerrar.setAttribute("class","span1");
 titulo.appendChild(cerrar);
 
 var contenido = document.createElement("div");
-contenido.setAttribute("class","div4")
+contenido.setAttribute("class","div5")
 caja.appendChild(contenido);
 contenido.appendChild(div)
 }
