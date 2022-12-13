@@ -79,7 +79,7 @@
 													</div>
 													<div class="part-2">
 															<h3 class="h3enunciado">Concurso <?php echo $concurso->getNombre(); ?></h3>
-															<h3 class="textofecha">Fecha de inicio: <?php echo $concurso->getFIni(); ?></h3> <h3 class="textofecha">Fecha de finalización: <?php echo $concurso->getFFin(); ?></h3>
+															<h3 class="textofecha">Fecha de inicio: <?php echo $concurso->getFIni(); ?></h3></br> <h3 class="textofecha">Fecha de finalización: <?php echo $concurso->getFFin(); ?></h3>
 													</div>
 											</div>
 									</div>
@@ -104,8 +104,8 @@
 												</ul>
 										</div>
 										<div class="part-2">
-												<h3 class="product-title">Concurso <?php echo $concurso->getNombre(); ?></h3>
-												<h3>Fecha de inicio: <?php $concurso->getFIni(); ?></h3> <h3>Fecha de finalización: <?php $concurso->getFFin(); ?></h3>
+												<h3 class="h3enunciado">Concurso <?php echo $concurso->getNombre(); ?></h3>
+												<h3 class="textofecha">Fecha de inicio: <?php echo $concurso->getFIni(); ?></h3></br><h3 class="textofecha">Fecha de finalización: <?php echo $concurso->getFFin(); ?></h3>
 										</div>
 								</div>
 						</div>

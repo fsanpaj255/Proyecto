@@ -244,7 +244,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             botoninsertar.setAttribute('type', "button");	
             botoninsertar.setAttribute('value', "ingresar");
             botoninsertar.setAttribute("class","button-azul");
-            //botoninsertar.setAttribute('onclick', "location.reload()");
+            botoninsertar.setAttribute('onclick', "location.reload()");
             
             //Unimos todo
             formulario.appendChild(label1);
@@ -313,7 +313,6 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
         modal(formulario);
 }
 function editarusuario(editusuario){
-    debugger;
     const ajaxedit  =  new XMLHttpRequest();
     ajaxedit.onreadystatechange = function(){
         if (ajaxedit.readyState == 4 && ajaxedit.status == 200){
@@ -340,7 +339,7 @@ function eliminarbanda(id_usuario){
 }
 
 function insertausuarios(newusuario){
-    debugger;
+  
     const ajaxinsert = new XMLHttpRequest();
     ajaxinsert.onreadystatechange = function(){
         if (ajaxinsert.readyState == 4 && ajaxinsert.status == 200){
@@ -350,7 +349,7 @@ function insertausuarios(newusuario){
     
     ajaxinsert.open("POST","./api/participantes/ingresarparticipantes.php");
     ajaxinsert.send(JSON.stringify(newusuario));
-    debugger;
+
 }
 function modal(div) {
 var modal = this.document.createElement("div");
