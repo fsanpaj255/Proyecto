@@ -127,7 +127,7 @@ thead.appendChild(fila_1);
                 aeliminar.addEventListener("click",function(){
                     var fila = this.parentElement.parentElement;
                     var celdaid = fila.children[0];
-                    eliminarbanda(celdaid.innerText);
+                    eliminarusuario(celdaid.innerText);
                     location.reload(); 
                     
              })
@@ -244,7 +244,7 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             botoninsertar.setAttribute('type', "button");	
             botoninsertar.setAttribute('value', "ingresar");
             botoninsertar.setAttribute("class","button-azul");
-            botoninsertar.setAttribute('onclick', "location.reload()");
+           // botoninsertar.setAttribute('onclick', "location.reload()");
             
             //Unimos todo
             formulario.appendChild(label1);
@@ -321,8 +321,9 @@ function editarusuario(editusuario){
     }
     ajaxedit.open("POST","./api/participantes/actualizarparticipantes.php");
     ajaxedit.send(JSON.stringify(editusuario));
+    location.reload(); 
 }
-function eliminarbanda(id_usuario){
+function eliminarusuario(id_usuario){
     const ajaxelimi =  new XMLHttpRequest();
     ajaxelimi.onreadystatechange = function(){
         if (ajaxelimi.readyState == 4 && ajaxelimi.status == 200){
@@ -349,6 +350,7 @@ function insertausuarios(newusuario){
     
     ajaxinsert.open("POST","./api/participantes/ingresarparticipantes.php");
     ajaxinsert.send(JSON.stringify(newusuario));
+    location.reload(); 
 
 }
 function modal(div) {
