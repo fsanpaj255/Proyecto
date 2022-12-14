@@ -244,7 +244,6 @@ function creaFormulario(id,identificador,admin,correo,contrasena,localizacion,im
             botoninsertar.setAttribute('type', "button");	
             botoninsertar.setAttribute('value', "ingresar");
             botoninsertar.setAttribute("class","button-azul");
-           // botoninsertar.setAttribute('onclick', "location.reload()");
             
             //Unimos todo
             formulario.appendChild(label1);

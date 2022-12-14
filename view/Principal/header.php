@@ -10,7 +10,7 @@ echo '<div class="topnav">';
       if ($_SESSION['rol'] == 0){
         echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
         echo  '<a href="?menu=concursosactivos">Concursos</a>';
-        echo  '<a href="?menu=concursosactivos">Mis concursos</a>';
+        echo  '<a href="?menu=misconcursos">Mis concursos</a>';
         echo '<li><a href=""><img src="source/usuario.png"></a>';
 echo '<ul>';
 echo '<li><a href="">Mi perfil</a></li>';

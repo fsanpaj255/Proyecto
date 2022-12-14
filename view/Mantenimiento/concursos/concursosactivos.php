@@ -100,7 +100,7 @@
 								<div id="product-1" class="single-product">
 										<div class="part-1">
 												<ul>
-														<li><a href="?menu=inscripcion&=<?php $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Participar!</a></li>
+														<li><a href="?menu=inscripcion&id=<?php $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Participar!</a></li>
 												</ul>
 										</div>
 										<div class="part-2">

@@ -9,62 +9,28 @@ class repositorioParticipacion {
         $this->conexion = $con;
     }
 
-
-
-    public function getParticipantes($id):array
-    {
-       //array de participantes
-        $participantes = [];
-        $sql = ("SELECT p.participante_id FROM concurso c 
-        JOIN participacion p ON p.concurso_id = c.id
-        WHERE c.id LIKE $id");
-            $consulta = $this->conexion->query($sql);
-            $dato = $consulta->fetchAll(PDO::FETCH_ASSOC);
-
-            for ($i=0; $i < count($dato); $i++) { 
-                # Añadimos
-                $idParticipacion = $dato[$i]['participante_id'];
-                $participantes[] = $idParticipacion;
-            }
-        return $participantes;
+    function participar($juez,$idparticipante,$idconcurso){
+        $this->conex->query("INSERT INTO participacion VALUES(null,'$juez', '$idparticipante', '$idconcurso')");
     }
 
-    public function get($idConcurso,$idParticipante)
+
+    function getparticipacion($idConcurso,$idParticipante)
     {
-        # Encontramos la participación
-        $sql = ("SELECT * FROM participacion WHERE concurso_id LIKE $idConcurso AND participante_id LIKE $idParticipante");
-            $consulta = $this->conexion->query($sql);
-            $datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            # cogemos todas las columnas
-            $id = $datos[0]['id'];
-            $rol = $datos[0]['rol'];
-            $con = $datos[0]['concurso_id'];
-            $part = $datos[0]['participante_id'];
+        # participacion del usuario del que tenga la id con el que se pueden sacar ademas todos los concursos
+        $resultado = $this->conex->query("SELECT * FROM participacion WHERE  participante_id LIKE $idParticipante");
+        while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
             $participacion = new Participacion();
-            $participacion->ingresaParticipacion($id,$rol,$con,$part);
-            return $participacion;
+              $participacion
+              ->setId($fila['id'])
+              ->setNombre($fila['juez'])
+              ->setDesc($fila['concurso_id'])
+              ->setFIni($fila['participante_id']);
+              $listadoparticipaciones[] = $participacio;
+        return $participacion;
     }
 
-    public function getNumJueces($id)
-    {
-        # Cogemos los jueces del concurso con ID dada
-        $sql = ("SELECT COUNT(id) FROM PARTICIPACION WHERE concurso_id LIKE $id AND rol LIKE 'juez'");
-            $consulta = $this->conexion->query($sql);
-            $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $result[0];
-        
-    } 
 
-    public function cuantos($id)
-    {
-        $sql = ("SELECT COUNT(id) FROM PARTICIPACION WHERE concurso_id LIKE $id");
-            $consulta = $this->conexion->query($sql);
-            $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
-            return $result[0];
-        
-    }
-
-    public function delete($id)
+     function delete($id)
     {
         # borramos según el id
         $sql = ("DELETE FROM participacion WHERE id LIKE $id");
@@ -74,18 +40,7 @@ class repositorioParticipacion {
         return $devolveer;
     }
 
-    public function set(Participacion $part):int | false
-    {
-        $rol = $part->getJuez();
-        $concurso = $part->getConcursoId();
-        $participante = $part->getParticipanteId(); 
-        # Preparamos el insert
-        $sql = "INSERT INTO participacion VALUES (null,'$rol',$concurso,$participante)";
-        $result = $this->conexion->exec($sql);
-        return $result;
-    
-    }
-    public function getById($id): Participacion
+     function getById($id): Participacion
     {
         $sql = ("select * FROM participacion 
         WHERE id = $id ");

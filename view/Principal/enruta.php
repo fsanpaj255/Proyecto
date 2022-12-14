@@ -63,6 +63,18 @@ if (isset($_GET['menu'])) {
         require_once './view/Mantenimiento/concursos/procesaeditaje.php';
      
     }
+    if ($_GET['menu'] == "inscripcion") {
+        require_once './view/Mantenimiento/concursos/inscripcion.php';
+     
+    }
+    if ($_GET['menu'] == "inscrito") {
+        require_once './view/Mantenimiento/concursos/inscrito.php';
+     
+    }
+    if ($_GET['menu'] == "misconcursos") {
+        require_once './view/Mantenimiento/concursos/misconcursos.php';
+     
+    }
 
     if ($_GET['menu'] == "pruebas") {
         require_once './pruebas/pruebas.php';
