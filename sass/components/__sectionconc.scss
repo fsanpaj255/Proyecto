@@ -15,7 +15,7 @@ a:hover {
 
 .section-products .header h3 {
     font-size: 1rem;
-    color: #00ADFF;
+    color: $primary-color;
     font-weight: 500;
     font-family: $font-stack;
 }
@@ -23,7 +23,7 @@ a:hover {
 .section-products .header h2 {
     font-size: 2.2rem;
     font-weight: 400;
-    color: #00ADFF; 
+    color: $primary-color; 
     font-family: $font-stack;
 }
 

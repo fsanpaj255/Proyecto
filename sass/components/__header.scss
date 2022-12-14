@@ -1,7 +1,7 @@
-.topnav {
+.c-topnav {
     display: flex;
     flex-direction: row;
-    background-color: #00ADFF;
+    background-color: $primary-color;
     overflow: hidden;
     justify-content: space-between;
     display: flex;
@@ -12,7 +12,7 @@
   
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  .c-topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -23,18 +23,18 @@
   }
   
   /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #0080BD;
+  .c-topnav a:hover {
+    background-color: $primary-color;
     color: white;
   }
   
   /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #00ADFF;
+  .c-topnav a.active {
+    background-color: $primary-color;
   }
   
   footer{
-    background-color: #00ADFF;
+    background-color: $primary-color;
     color: #000000;
     font-size: 16px;
     font-family: $font-stack;
@@ -52,37 +52,37 @@
 
 
 /*   menu desplegable */
-  .topnav li {
+  .c-topnav li {
     right: 20%;
     list-style: none;
     margin-right: 0.5%;
   }
-  .topnav li a {
+  .c-topnav li a {
     background-color:#00699B;
     color:#fff;
     text-decoration:none;
     display:block;
   }
 
-  .topnav li a:hover {
+  .c-topnav li a:hover {
     background-color:#00415F;
   }
 
-  .topnav li ul {
+  .c-topnav li ul {
     display:none;
     position:absolute;
     top: 9.5%;
   }
 
-  .topnav li:hover > ul {
+  .c-topnav li:hover > ul {
     display:block;
   }
 
-  .topnav li ul li {
+  .c-topnav li ul li {
     position:relative;
   }
 
-  .topnav li ul li ul {
+  .c-topnav li ul li ul {
     top:0px;
   }
   

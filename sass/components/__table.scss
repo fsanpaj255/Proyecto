@@ -9,7 +9,7 @@
 }
 
 .styled-table thead tr {
-    background-color: #00ADFF;
+    background-color: $primary-color;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -29,7 +29,7 @@
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #00ADFF;
+    border-bottom: 2px solid $primary-color;
 }
 
 .styled-table tbody tr.active-row {
@@ -44,7 +44,7 @@
 .h3table{
     margin: 2%;
     font-family: $font-stack;
-    color: #00ADFF;
+    color: $primary-color;
 }
 
 .buttonanadir{

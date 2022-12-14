@@ -1,6 +1,6 @@
 <?php
 echo '<header>';
-echo '<div class="topnav">';
+echo '<div class="c-topnav">';
     if (!isset($_SESSION['rol'])){
       echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
       echo  '<a href="?menu=pantallainfo">¿Quienes somos?</a>';

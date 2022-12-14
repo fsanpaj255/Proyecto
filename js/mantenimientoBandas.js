@@ -252,26 +252,26 @@ function insertabandas(newbanda){
 }
 function modal(div) {
 var modal = this.document.createElement("div");
-modal.setAttribute("class","div1");
+modal.setAttribute("class","m-div1");
 document.body.appendChild(modal,titulo);
 
 var caja = document.createElement("div");
 var left = parseInt((window.innerWidth - 600) / 2) + "px";
 var top = parseInt((window.innerHeight - 400) / 2) + "px";
-caja.setAttribute("class","div2");
+caja.setAttribute("class","m-div2");
 caja.style.left = left;
 caja.style.top = top;
 
 document.body.appendChild(caja);
 
 var titulo = document.createElement("div");
-titulo.setAttribute("class","div3");
+titulo.setAttribute("class","m-div3");
 titulo.innerHTML="Nuevo Usuario";
 caja.appendChild(titulo);
 
 var cerrar = document.createElement("span");
 cerrar.innerHTML="X";
-cerrar.setAttribute("class","span1");
+cerrar.setAttribute("class","m-span1");
  cerrar.onclick=function(){
      var caja =this.parentElement.parentElement;
     caja.parentElement.removeChild(caja);
@@ -281,7 +281,7 @@ cerrar.setAttribute("class","span1");
 titulo.appendChild(cerrar);
 
 var contenido = document.createElement("div");
-contenido.setAttribute("class","div4")
+contenido.setAttribute("class","m-div4")
 caja.appendChild(contenido);
 contenido.appendChild(div)
 }
