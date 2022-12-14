@@ -14,8 +14,7 @@ class Login
     
         if ($correo == $usuario->getCorreo() && $contrasena == $usuario->getContrasena())
         {
-            $rol = $usuario->getAdmin();
-            $_SESSION['rol'] = $rol;
+            $_SESSION['usuario'] = $usuario;
             header('Location: ?menu=listadoconcursos');
         }  
     }

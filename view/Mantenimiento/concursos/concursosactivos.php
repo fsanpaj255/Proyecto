@@ -17,7 +17,7 @@
 								</div>
 						</div>
 				</div>
-			<?php	if (!isset($_SESSION['rol'])){ ?>
+			<?php	if (!isset($_SESSION['usuario'])){ ?>
 				<div class="row">
 						<!-- Single Product -->
 						<div class="col-md-6 col-lg-4 col-xl-3">
@@ -61,7 +61,7 @@
 						</div>
 						<?php     
 						 }else{
-							if ($_SESSION['rol'] == 1){ 
+							if ($_SESSION['usuario']->getAdmin() == 1){ 
 							$c = new Conexion;
 							$conex = $c->conectabd();
 							$rpconcursos = new repositorioConcurso($conex);
@@ -100,7 +100,7 @@
 								<div id="product-1" class="single-product">
 										<div class="part-1">
 												<ul>
-														<li><a href="?menu=inscripcion&id=<?php $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Participar!</a></li>
+														<li><a href="?menu=inscrito&id=<?php $concurso->getId(); ?>"><i class="fas fa-shopping-cart"></i>¡Participar!</a></li>
 												</ul>
 										</div>
 										<div class="part-2">

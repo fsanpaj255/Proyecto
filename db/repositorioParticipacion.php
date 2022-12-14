@@ -14,25 +14,26 @@ class repositorioParticipacion {
     }
 
 
-    function getparticipacion($idConcurso,$idParticipante)
+    function getparticipaciones($idParticipante)
     {
-        # participacion del usuario del que tenga la id con el que se pueden sacar ademas todos los concursos
+        //participacion del usuario del que tenga la id con el que se pueden sacar ademas todos los concursos
         $resultado = $this->conex->query("SELECT * FROM participacion WHERE  participante_id LIKE $idParticipante");
         while ($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
             $participacion = new Participacion();
               $participacion
               ->setId($fila['id'])
-              ->setNombre($fila['juez'])
-              ->setDesc($fila['concurso_id'])
-              ->setFIni($fila['participante_id']);
-              $listadoparticipaciones[] = $participacio;
-        return $participacion;
+              ->setJuez($fila['juez'])
+              ->setConcursoId($fila['concurso_id'])
+              ->setParticipanteId($fila['participante_id']);
+              $listadoparticipaciones[] = $participacion;
+        return $listadoparticipaciones;
     }
+}
 
 
      function delete($id)
     {
-        # borramos según el id
+        //borramos segn el id
         $sql = ("DELETE FROM participacion WHERE id LIKE $id");
         $this->conexion->beginTransaction();
         $devolveer = $this->conexion->exec($sql);

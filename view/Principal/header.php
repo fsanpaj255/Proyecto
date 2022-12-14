@@ -1,13 +1,14 @@
 <?php
+ session_start();
 echo '<header>';
 echo '<div class="c-topnav">';
-    if (!isset($_SESSION['rol'])){
+    if (!isset($_SESSION['usuario'])){
       echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
       echo  '<a href="?menu=pantallainfo">¿Quienes somos?</a>';
       echo  '<a href="?menu=concursosactivos">Concursos</a>';
       echo '<a href="?menu=autentifica"><button type="submit" class="button-azul" href="?menu=autentifica">Iniciar sesión</button></a>';
     }else{
-      if ($_SESSION['rol'] == 0){
+      if ($_SESSION['usuario']->getAdmin() == 0){
         echo '<a class="active" href="?menu=concursosactivos"><img src="source/logo34.png"></a>';
         echo  '<a href="?menu=concursosactivos">Concursos</a>';
         echo  '<a href="?menu=misconcursos">Mis concursos</a>';
