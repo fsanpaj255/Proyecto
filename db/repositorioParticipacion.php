@@ -2,12 +2,12 @@
 
 class repositorioParticipacion {
 
-    private PDO $conexion;
-
-    public function __construct($con)
-    {
-        $this->conexion = $con;
-    }
+    private $conex;
+    
+    public function __construct($conex)
+     {
+     $this->conex = $conex;
+     }
 
     function participar($juez,$idparticipante,$idconcurso){
         $this->conex->query("INSERT INTO participacion VALUES(null,'$juez', '$idparticipante', '$idconcurso')");
